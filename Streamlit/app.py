@@ -208,11 +208,11 @@ st.markdown(f"""
 
 # Establecer nuevos parámetros de consulta al hacer clic en los botones del navbar
 if page == "home":
-    st.experimental_set_query_params(page="home")
+    st.experimental_get_query_params(page="home")
     home.home_page()
 elif page == "dashboard":
-    st.experimental_set_query_params(page="dashboard")
+    st.experimental_get_query_params(page="dashboard")
     dashboard.dashboard_page()
 elif page == "modelos":
-    st.experimental_set_query_params(page="modelos")
+    st.experimental_get_query_params(page="modelos")
     modelos.modelos_page()
