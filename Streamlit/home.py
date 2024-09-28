@@ -13,9 +13,9 @@ def get_image_b64(image_path):
 
 def home_page():
     # Aquí va el contenido que ya tienes en la página de home.
-    img1 = Image.open('./07-streamlit/images/arcope-logo.jpeg') 
+    img1 = Image.open('./Streamlit/images/arcope-logo.jpeg') 
     st.markdown(
-        f"<div style='text-align: center;'><img src='data:image/jpeg;base64,{get_image_b64('./07-streamlit/images/arcope-logo.jpeg')}' width='300'/></div>",
+        f"<div style='text-align: center;'><img src='data:image/jpeg;base64,{get_image_b64('./Streamlit/images/arcope-logo.jpeg')}' width='300'/></div>",
         unsafe_allow_html=True
     )
     
@@ -214,42 +214,42 @@ def home_page():
             "profesion": "Project Manager",
             "github": "https://github.com/",
             "linkedin": "https://www.linkedin.com/",
-            "imagen_link": "./07-streamlit/images/cristian.jpeg"
+            "imagen_link": "./Streamlit/images/cristian.jpeg"
         },
         {
             "nombre": "Andres Aguirre",
             "profesion": "Technical Project Manager & Data Analytics",
             "github": "https://github.com/",
             "linkedin": "https://www.linkedin.com/",
-            "imagen_link": "./07-streamlit/images/andres.jpeg"
+            "imagen_link": "./Streamlit/images/andres.jpeg"
         },
         {
             "nombre": "Jeison Zapata",
             "profesion": "Data Scientist & Data Analyst",
             "github": "https://github.com/",
             "linkedin": "https://www.linkedin.com/",
-            "imagen_link": "./07-streamlit/images/jeison.jpeg"
+            "imagen_link": "./Streamlit/images/jeison.jpeg"
         },
         {
             "nombre": "Libardo Alarcon",
             "profesion": "Data Scientist",
             "github": "https://github.com/",
             "linkedin": "https://www.linkedin.com/",
-            "imagen_link": "./07-streamlit/images/libardo.jpeg"
+            "imagen_link": "./Streamlit/images/libardo.jpeg"
         },
         {
             "nombre": "Manuel Carruitero",
             "profesion": "Data Engineer",
             "github": "https://github.com/",
             "linkedin": "https://www.linkedin.com/",
-            "imagen_link": "./07-streamlit/images/manuel.jpeg"
+            "imagen_link": "./Streamlit/images/manuel.jpeg"
         },
         {
             "nombre": "Lucas Carranza",
             "profesion": "Data Engineer",
             "github": "https://github.com/",
             "linkedin": "https://www.linkedin.com/",
-            "imagen_link": "./07-streamlit/images/lucas.jpeg"
+            "imagen_link": "./Streamlit/images/lucas.jpeg"
         }
     ]
     
@@ -267,8 +267,8 @@ def home_page():
                 st.markdown(f'<div style="display: flex; justify-content: center;"><img src="data:image/png;base64,{persona_image}" style="border-radius: 50%;" width="150"/></div>', unsafe_allow_html=True)
     
             # Logos de redes sociales
-            linkedin_logo = get_image_b64("./07-streamlit/images/LI-In-Bug.png")
-            github_logo = get_image_b64("./07-streamlit/images/github-mark-white.png")
+            linkedin_logo = get_image_b64("./Streamlit/images/LI-In-Bug.png")
+            github_logo = get_image_b64("./Streamlit/images/github-mark-white.png")
             st.markdown(
                 f'''
                 <div style="display: flex; justify-content: center; margin-top: 10px;">
