@@ -67,16 +67,8 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Capturar los parámetros de consulta
-query_params = st.query_params
+query_params = st.experimental_get_query_params()
 page = query_params.get("page", ["home"])[0]  # Página predeterminada es 'home'
-
-
-
-# Función para actualizar la URL y navegar entre páginas
-def navigate_to(page_name):
-    st.experimental_set_query_params(page=page_name)
-
-
 
 
 # CSS para personalizar el navbar y eliminar los espacios sobrantes
@@ -170,16 +162,19 @@ st.markdown("""
 # HTML para el Navbar utilizando Bootstrap con los botones personalizados
 st.markdown(f"""
     <nav class="navbar-custom">
-        <a href="javascript:window.location.search = '?page=home'" class="nav-item">Home</a>
-        <a href="javascript:window.location.search = '?page=dashboard'" class="nav-item">Dashboard</a>
-        <a href="javascript:window.location.search = '?page=modelos'" class="nav-item">Modelos</a>
+        <a href="?page=home" class="nav-item">Home</a>
+        <a href="?page=dashboard" class="nav-item">Dashboard</a>
+        <a href="?page=modelos" class="nav-item">Modelos</a>
     </nav>
 """, unsafe_allow_html=True)
 
-# Establecer el contenido según la página actual
+
+# Cargar el contenido de la página basada en el valor del parámetro 'page'
 if page == "home":
-    home.home_page()
+    home.home_page()  # Llamar a la función home_page() de home.py
 elif page == "dashboard":
-    dashboard.dashboard_page()
+    dashboard.dashboard_page()  # Llamar a la función dashboard_page() de dashboard.py
 elif page == "modelos":
-    modelos.modelos_page()
+    modelos.modelos_page()  # Llamar a la función modelos_page() de modelos.py
+else:
+    st.error("Página no encontrada")
