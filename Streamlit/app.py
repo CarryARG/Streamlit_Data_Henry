@@ -72,9 +72,7 @@ page = query_params.get("page", ["home"])[0]  # Página predeterminada es 'home'
 
 
 
-# Función para actualizar la URL y navegar entre páginas
-def navigate_to(page_name):
-    st.experimental_set_query_params(page=page_name)
+
 
 
 
