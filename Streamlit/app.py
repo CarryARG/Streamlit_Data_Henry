@@ -39,24 +39,11 @@ def get_image_b64(image_path):
 
 
 # Incluir Bootstrap CSS y JavaScript
-
 st.markdown("""
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    crossorigin="anonymous">
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
-
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" 
-
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9P/ScQsAP7hUibX39j13EVY4pQ11VVn1+kpZ60" crossorigin="anonymous"></script>
-
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
-
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9P/ScQsAP7hUibX39j13EVY4pQ11VVn1+kpZ60" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 """, unsafe_allow_html=True)
 
 
@@ -79,14 +66,8 @@ st.markdown("""
 
 """, unsafe_allow_html=True)
 
-
-
-
-
-
-
 # Capturar los parámetros de consulta
-query_params = st.experimental_get_query_params()
+query_params = st.query_params
 page = query_params.get("page", ["home"])[0]  # Página predeterminada es 'home'
 
 
@@ -187,32 +168,18 @@ st.markdown("""
 
 
 # HTML para el Navbar utilizando Bootstrap con los botones personalizados
-
 st.markdown(f"""
-
     <nav class="navbar-custom">
-
-        <a href="#" class="nav-item" onclick="window.location.href='/?page=home'">Home</a>
-
-        <a href="#" class="nav-item" onclick="window.location.href='/?page=dashboard'">Dashboard</a>
-
-        <a href="#" class="nav-item" onclick="window.location.href='/?page=modelos'">Modelos</a>
-
+        <a href="javascript:window.location.search = '?page=home'" class="nav-item">Home</a>
+        <a href="javascript:window.location.search = '?page=dashboard'" class="nav-item">Dashboard</a>
+        <a href="javascript:window.location.search = '?page=modelos'" class="nav-item">Modelos</a>
     </nav>
-
 """, unsafe_allow_html=True)
 
-
-
-
-
-# Establecer nuevos parámetros de consulta al hacer clic en los botones del navbar
+# Establecer el contenido según la página actual
 if page == "home":
-    st.experimental_set_query_params(page="home")
     home.home_page()
 elif page == "dashboard":
-    st.experimental_set_query_params(page="dashboard")
     dashboard.dashboard_page()
 elif page == "modelos":
-    st.experimental_set_query_params(page="modelos")
     modelos.modelos_page()
