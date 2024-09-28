@@ -1,5 +1,7 @@
 import streamlit as st
-
+import home  # Importar la página 'home.py'
+import dashboard
+import modelos
 import base64
 from PIL import Image
 
