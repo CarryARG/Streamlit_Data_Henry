@@ -42,11 +42,8 @@ def get_image_b64(image_path):
 
 st.markdown("""
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
-
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    crossorigin="anonymous">
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
 
@@ -189,27 +186,32 @@ st.markdown("""
 
 
 # HTML para el Navbar utilizando Bootstrap con los botones personalizados
+
 st.markdown(f"""
+
     <nav class="navbar-custom">
-        <a href="#" class="nav-item" onclick="window.location.href='/?page=home'; window.location.reload()">Home</a>
-        <a href="#" class="nav-item" onclick="window.location.href='/?page=dashboard'; window.location.reload()">Dashboard</a>
-        <a href="#" class="nav-item" onclick="window.location.href='/?page=modelos'; window.location.reload()">Modelos</a>
+
+        <a href="#" class="nav-item" onclick="window.location.href='/?page=home'">Home</a>
+
+        <a href="#" class="nav-item" onclick="window.location.href='/?page=dashboard'">Dashboard</a>
+
+        <a href="#" class="nav-item" onclick="window.location.href='/?page=modelos'">Modelos</a>
+
     </nav>
+
 """, unsafe_allow_html=True)
 
 
 
 
-# Contenido basado en la página seleccionada
 
+# Establecer nuevos parámetros de consulta al hacer clic en los botones del navbar
 if page == "home":
-
-    home.home_page()  # Asegúrate de que esta función esté correctamente definida
-
+    st.experimental_set_query_params(page="home")
+    home.home_page()
 elif page == "dashboard":
-
-    dashboard.dashboard_page()  # Asegúrate de que esta función esté correctamente definida
-
+    st.experimental_set_query_params(page="dashboard")
+    dashboard.dashboard_page()
 elif page == "modelos":
-
-    modelos.modelos_page()  # Asegúrate de que esta función esté correctamente definida
+    st.experimental_set_query_params(page="modelos")
+    modelos.modelos_page()
