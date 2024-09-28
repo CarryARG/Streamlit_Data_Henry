@@ -85,14 +85,15 @@ st.markdown("""
 
 
 
-# Obtener la página actual desde los parámetros de consulta (URL)
-
-query_params = st.query_params  # Usamos st.query_params
-
-page = query_params.get("page", ["home"])[0]  # Esto recupera el valor de 'page' en la URL
+# Capturar los parámetros de consulta
+query_params = st.experimental_get_query_params()
+page = query_params.get("page", ["home"])[0]  # Página predeterminada es 'home'
 
 
 
+# Función para actualizar la URL y navegar entre páginas
+def navigate_to(page_name):
+    st.experimental_set_query_params(page=page_name)
 
 
 
