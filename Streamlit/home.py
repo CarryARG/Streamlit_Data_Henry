@@ -25,6 +25,8 @@ def home_page():
         h2 { color: #F25041; }
         h3 { color: #000000; }
         h4 { color: #000000; }
+        h5 { color: #000000; }
+        h6 { color: #000000; }
         .card {
             background-color: #56B5BF;
             border-radius: 10px;
