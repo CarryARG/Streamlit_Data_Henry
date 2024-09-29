@@ -76,6 +76,8 @@ st.markdown("""
 
             border-radius: 5px;
 
+            text-decoration: none; /* Eliminar subrayado */
+
         }
 
 
