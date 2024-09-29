@@ -5,6 +5,62 @@ import modelos
 import base64
 from PIL import Image
 
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background-color: #F2F2F2;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+st.markdown(
+    """
+    <style>
+    h1 {
+        color: #F25A38;
+    }
+    h2 {
+        color: #F25041;
+    }
+    h3 {
+        color: #F2A649;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+st.markdown(
+    """
+    <style>
+    .card {
+        background-color: #56B5BF;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+st.markdown(
+    """
+    <style>
+    .social-logo {
+        background-color: #F2F2F2;
+        border-radius: 50%;
+        padding: 5px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+
 # Función para cargar imágenes en base64
 def get_image_b64(image_path):
     try:
