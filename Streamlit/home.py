@@ -253,31 +253,31 @@ def home_page():
     <div class="table-container">
         <table>
             <tr>
-                <th>Fase</th>
-                <th>**Herramientas y Tecnologías**</th>
+                <th style="text-align: center";>Fase</th>
+                <th style="text-align: center";>Herramientas y Tecnologías</th>
             </tr>
             <tr>
-                <td>**1. Ingesta de Datos y ETL**</td>
+                <td>1. Ingesta de Datos y ETL</td>
                 <td>Python, Pandas, PyArrow, MinIO</td>
             </tr>
             <tr>
-                <td>**2. Ingreso en la Base de Datos**</td>
+                <td>2. Ingreso en la Base de Datos</td>
                 <td>MySQL, phpMyAdmin, SQLAlchemy</td>
             </tr>
             <tr>
-                <td>**3. Entrenamiento de Machine Learning**</td>
+                <td>3. Entrenamiento de Machine Learning</td>
                 <td>Scikit-learn, Pickle, Jupyter Notebook</td>
             </tr>
             <tr>
-                <td>**4. Creación de Dashboards e Informes**</td>
+                <td>4. Creación de Dashboards e Informes</td>
                 <td>Matplotlib, Seaborn, Plotly, Jupyter Notebook, Streamlit/Dash</td>
             </tr>
             <tr>
-                <td>**5. Orquestador**</td>
+                <td>5. Orquestador</td>
                 <td>Apache Airflow</td>
             </tr>
             <tr>
-                <td>**Infraestructura y Seguridad**</td>
+                <td>Infraestructura y Seguridad</td>
                 <td>Servidor Local, Configuración de MySQL para Acceso Remoto, SSH/VPN</td>
             </tr>
         </table>
