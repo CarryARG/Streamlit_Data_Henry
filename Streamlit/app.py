@@ -54,7 +54,7 @@ st.markdown("""
 
     <style>
 
-        
+        #MainMenu {visibility: visible;} /* Ocultar el menú de arriba a la derecha */
 
         footer {visibility: hidden;} /* Ocultar el pie de página */
 
