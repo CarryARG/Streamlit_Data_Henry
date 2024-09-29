@@ -253,8 +253,8 @@ def home_page():
     <div class="table-container">
         <table>
             <tr>
-                <th style="text-align: center";>Fase</th>
-                <th style="text-align: center";>Herramientas y Tecnologías</th>
+                <th style="text-align: center";> Fase </th>
+                <th style="text-align: center";> Herramientas y Tecnologías </th>
             </tr>
             <tr>
                 <td>1. Ingesta de Datos y ETL</td>
