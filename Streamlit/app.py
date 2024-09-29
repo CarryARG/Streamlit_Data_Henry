@@ -165,12 +165,15 @@ st.markdown(f"""
     </nav>
 """, unsafe_allow_html=True)
 
-# Cargar el contenido de la página basada en el valor del parámetro 'page'
+
 if page == "home":
-    home.home_page()  # Llamar a la función home_page() de home.py
+    st.experimental_set_query_params(page="home")
+    home.home_page()
 elif page == "dashboard":
-    dashboard.dashboard_page()  # Llamar a la función dashboard_page() de dashboard.py
+    st.experimental_set_query_params(page="dashboard")
+    dashboard.dashboard_page()
 elif page == "modelos":
-    modelos.modelos_page()  # Llamar a la función modelos_page() de modelos.py
+    st.experimental_set_query_params(page="modelos")
+    modelos.modelos_page()
 else:
     st.error("Página no encontrada")
