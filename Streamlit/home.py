@@ -19,7 +19,7 @@ def home_page():
         """
         <style>
         .stApp {
-            background-color: #F2F2F2;
+            background-color: whitesmoke;
         }
         h1 { color: #F25A38; }
         h2 { color: #F25041; }
