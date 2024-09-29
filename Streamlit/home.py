@@ -56,7 +56,10 @@ def home_page():
     st.title("ARCOPE Proyecto Final - Henry")
 
     # Divisor arcoíris
-    st.markdown("<hr style='border: 2px solid rainbow;'>", unsafe_allow_html=True)
+    st.markdown("""
+    <hr style="border: none; height: 4px; 
+    background: linear-gradient(to right, #F25A38, #F2A649, #56B5BF, #F25041, #F2F2F2);">
+    """, unsafe_allow_html=True)
     
     # Descripción del proyecto
     st.markdown("""
