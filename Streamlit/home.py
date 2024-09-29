@@ -37,6 +37,7 @@ def home_page():
             background-color: #F2F2F2;
             border-radius: 50%;
             padding: 5px;
+            transform: scale(1.1); /* Aumentar el tamaño al pasar el mouse */
         }
         </style>
         """,
@@ -56,7 +57,7 @@ def home_page():
     
     # Descripción del proyecto
     st.markdown("""
-    ## Proyecto: Data Product orientado a la sostenibilidad y rentabilidad para Uber en la ciudad de New York.
+    <h2> Proyecto: Data Product orientado a la sostenibilidad y rentabilidad para Uber en la ciudad de New York.</h2>
     
     ### Objetivo Principal:
     Transformar el negocio de Uber en un referente de sostenibilidad y rentabilidad a largo plazo mediante la optimización operativa, la inversión en tecnología sustentable y la mejora de la imagen corporativa, para atraer tanto a clientes conscientes del medio ambiente como a inversores interesados en sostenibilidad.

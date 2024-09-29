@@ -85,10 +85,9 @@ st.markdown("""
         .nav-item:hover {
 
             background-color: #F25E3D; /* Color más oscuro para el hover */
-
             box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
-
             text-decoration: none; /* Eliminar subrayado */
+            transform: scale(1.1); /* Aumentar el tamaño al pasar el mouse */
 
         }
 
