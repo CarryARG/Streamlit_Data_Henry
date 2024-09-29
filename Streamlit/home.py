@@ -23,7 +23,7 @@ def home_page():
         }
         h1 { color: #F25A38; }
         h2 { color: #F25041; }
-        h3 { color: #FFF; }
+        h3 { color: #000000; }
         .card {
             background-color: #56B5BF;
             border-radius: 10px;
