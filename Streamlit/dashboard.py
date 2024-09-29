@@ -7,9 +7,6 @@ import modelos
 
 # Definir función principal para manejar pestañas
 def dashboard_page():
-    # Configuración inicial del layout y tema
-    st.set_page_config(page_title="Dashboard Interactivo de Análisis de Datos", layout="wide")
-
     # Encabezado principal con formato
     st.markdown("""
     # Presentación Interactiva de Análisis de Datos 📊
