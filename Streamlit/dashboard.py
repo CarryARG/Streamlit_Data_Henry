@@ -1,17 +1,9 @@
 import streamlit as st
-import home  # Importar la página 'home.py'
-import dashboard
-import modelos
-import base64
-from PIL import Image
-
-def dashboard_page():
-    import streamlit as st
 import pandas as pd
 import plotly.express as px
 
 # Definir función principal para manejar pestañas
-def paginaprincipal():
+def dashboard_page():
     # Configuración inicial del layout y tema
     st.set_page_config(page_title="Dashboard Interactivo de Análisis de Datos", layout="wide")
 
