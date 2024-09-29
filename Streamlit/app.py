@@ -70,7 +70,7 @@ st.markdown("""
 
             background-color: #F2A649;
 
-            color: #F2A649;
+            color: #FFF;
 
             padding: 10px 20px;
 
@@ -146,7 +146,7 @@ st.markdown(f"""
     <nav class="navbar-custom">
         <a href="?page=home" class="nav-item">Home</a>
         <a href="?page=dashboard" class="nav-item">Dashboard</a>
-        <a href="?page=modelos" class="nav-item">Modelos</a>
+        <a href="?page=modelos" class="nav-item" style="color:#FFF">Modelos</a>
     </nav>
 """, unsafe_allow_html=True)
 
