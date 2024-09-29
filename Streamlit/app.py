@@ -156,29 +156,14 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-
-
-
-# Botones en Streamlit
-col1, col2, col3 = st.columns(3)  # Crear columnas para alinear los botones
-with col1:
-    if st.button("Home"):
-        st.experimental_set_query_params(page="home")
-with col2:
-    if st.button("Dashboard"):
-        st.experimental_set_query_params(page="dashboard")
-with col3:
-    if st.button("Modelos"):
-        st.experimental_set_query_params(page="modelos")
-
-# Cargar el contenido de las páginas basado en los parámetros
-if page == "home":
-    home.home_page()
-elif page == "dashboard":
-    dashboard.dashboard_page()
-elif page == "modelos":
-    modelos.modelos_page()
-
+# HTML para el Navbar utilizando Bootstrap con los botones personalizados
+st.markdown(f"""
+    <nav class="navbar-custom">
+        <a href="?page=home" class="nav-item">Home</a>
+        <a href="?page=dashboard" class="nav-item">Dashboard</a>
+        <a href="?page=modelos" class="nav-item">Modelos</a>
+    </nav>
+""", unsafe_allow_html=True)
 
 # Cargar el contenido de la página basada en el valor del parámetro 'page'
 if page == "home":
