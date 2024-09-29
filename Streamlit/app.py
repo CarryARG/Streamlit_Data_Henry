@@ -161,12 +161,14 @@ st.markdown("""
 
 # HTML para el Navbar utilizando Bootstrap con los botones personalizados
 st.markdown(f"""
-    <nav class="navbar-custom">
-        <a href="?page=home" class="nav-item">Home</a>
-        <a href="?page=dashboard" class="nav-item">Dashboard</a>
-        <a href="?page=modelos" class="nav-item">Modelos</a>
-        <div id="MainMenu"></div>
-    </nav>
+    <div class="navbar-container">
+        <nav class="navbar-custom">
+            <a href="?page=home" class="nav-item">Home</a>
+            <a href="?page=dashboard" class="nav-item">Dashboard</a>
+            <a href="?page=modelos" class="nav-item">Modelos</a>
+        </nav>
+        <div id="MainMenu"></div> <!-- Esto mostrará el menú de Streamlit -->
+    </div>
 """, unsafe_allow_html=True)
 
 
