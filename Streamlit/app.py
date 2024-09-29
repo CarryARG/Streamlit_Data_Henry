@@ -54,7 +54,7 @@ st.markdown("""
 
     <style>
 
-        #MainMenu {visibility: hidden;} /* Ocultar el menú de arriba a la derecha */
+        
 
         footer {visibility: hidden;} /* Ocultar el pie de página */
 
@@ -77,7 +77,7 @@ st.markdown("""
 
     <style>
 
-        #header, footer {
+        #MainMenu, header, footer {
 
             visibility: hidden;
 
@@ -141,10 +141,7 @@ st.markdown("""
 
         }
 
-        .navbar-container {
-            display: flex;
-            flex-direction: column;
-        }
+
 
         .main-content {
 
@@ -161,16 +158,19 @@ st.markdown("""
 
 # HTML para el Navbar utilizando Bootstrap con los botones personalizados
 st.markdown(f"""
-    <div class="navbar-container">
-        <nav class="navbar-custom">
-            <a href="?page=home" class="nav-item">Home</a>
-            <a href="?page=dashboard" class="nav-item">Dashboard</a>
-            <a href="?page=modelos" class="nav-item">Modelos</a>
-        </nav>
+    <nav class="navbar-custom">
+        <a href="?page=home" class="nav-item">Home</a>
+        <a href="?page=dashboard" class="nav-item">Dashboard</a>
+        <a href="?page=modelos" class="nav-item">Modelos</a>
+    </nav>
+""", unsafe_allow_html=True)
+
+# Mostrar el menú de Streamlit (los tres puntos) debajo del navbar
+st.markdown("""
+    <div style="margin-top: 10px;">
         <div id="MainMenu"></div> <!-- Esto mostrará el menú de Streamlit -->
     </div>
 """, unsafe_allow_html=True)
-
 
 if page == "home":
     st.experimental_set_query_params(page="home")
