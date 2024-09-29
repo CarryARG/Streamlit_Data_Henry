@@ -58,7 +58,7 @@ st.markdown("""
 
         footer {visibility: hidden;} /* Ocultar el pie de página */
 
-        header {visibility: hidden;} /* Ocultar el header */
+        
 
         .css-18e3th9 {padding: 0;} /* Eliminar padding sobrante */
 
