@@ -77,7 +77,7 @@ st.markdown("""
 
     <style>
 
-        #MainMenu, header, footer {
+        #header, footer {
 
             visibility: hidden;
 
