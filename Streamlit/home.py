@@ -53,8 +53,7 @@ def home_page():
     )
     
     # Título del proyecto
-    st.markdown(""" # Proyecto: Data Product orientado a la sostenibilidad y rentabilidad para Uber en la ciudad de New York."""
-                , divider='rainbow')
+    st.title("ARCOPE Proyecto Final - Henry", divider='rainbow')
     
     # Descripción del proyecto
     st.markdown("""
