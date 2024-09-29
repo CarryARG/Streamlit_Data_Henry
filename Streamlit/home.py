@@ -227,7 +227,7 @@ def home_page():
     
     ---
     """)
-    
+
     # Tabla con estilo CSS
     st.markdown("""
     <style>
@@ -253,7 +253,7 @@ def home_page():
     <div class="table-container">
         <table>
             <tr>
-                <th>**Fase**</th>
+                <th>Fase</th>
                 <th>**Herramientas y Tecnologías**</th>
             </tr>
             <tr>
