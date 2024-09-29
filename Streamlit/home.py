@@ -53,7 +53,9 @@ def home_page():
     )
     
     # Título del proyecto
-    st.title("ARCOPE - Proyecto Final")
+    st.markdown("""
+    # ARCOPE - PROYECTO FINAL
+    """)
 
     # Divisor arcoíris
     st.markdown("""
