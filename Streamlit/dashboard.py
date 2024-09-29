@@ -7,6 +7,19 @@ import modelos
 
 # Definir función principal para manejar pestañas
 def dashboard_page():
+    
+# Estilo CSS para ocultar la barra lateral
+    st.markdown(
+    """
+    <style>
+    .css-1d391kg {
+        display: none;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
     # Encabezado principal con formato
     st.markdown("""
     # Presentación Interactiva de Análisis de Datos 📊
