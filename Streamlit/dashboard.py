@@ -152,6 +152,3 @@ def paginaprincipal():
             fig.update_yaxes(title_text="Frecuencia")
             st.plotly_chart(fig)
 
-# Ejecutar la función principal si este archivo es el principal
-if __name__ == "__main__":
-    dashboard_page()
