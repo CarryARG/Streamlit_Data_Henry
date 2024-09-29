@@ -47,23 +47,6 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-
-# Ocultar los elementos no deseados del menú superior y el espaciado adicional
-
-st.markdown("""
-
-    <style>
-
-        footer {visibility: hidden;} /* Ocultar el pie de página */
-
-        header {visibility: hidden;} /* Ocultar el header */
-
-        .css-18e3th9 {padding: 0;} /* Eliminar padding sobrante */
-
-    </style>
-
-""", unsafe_allow_html=True)
-
 # Capturar los parámetros de consulta
 query_params = st.experimental_get_query_params()
 page = query_params.get("page", ["home"])[0]  # Página predeterminada es 'home'
@@ -75,13 +58,13 @@ st.markdown("""
 
     <style>
 
-        #header, footer {
+        footer {visibility: hidden;} /* Ocultar el pie de página */
 
-            visibility: hidden;
+        header {visibility: hidden;} /* Ocultar el header */
 
-        }
+        .css-18e3th9 {padding: 0;} /* Eliminar padding sobrante */
 
-
+        #MainMenu {visibility: visible;} /* Asegurarse de que el menú de Streamlit esté visible */
 
         .nav-item {
 
@@ -161,7 +144,6 @@ st.markdown(f"""
         <a href="?page=dashboard" class="nav-item">Dashboard</a>
         <a href="?page=modelos" class="nav-item">Modelos</a>
     </nav>
-    <div id="MainMenu"  style="z-index: 1001;"></div>
 """, unsafe_allow_html=True)
 
 # Mostrar el menú de Streamlit (los tres puntos) debajo del navbar
