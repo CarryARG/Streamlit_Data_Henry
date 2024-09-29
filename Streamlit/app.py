@@ -159,9 +159,9 @@ st.markdown("""
 # Navbar HTML
 st.markdown(f"""
     <nav class="navbar-custom">
-        <a href="javascript:window.location.search ='?page=home'" class="nav-item">Home</a>
-        <a href="javascript:window.location.search ='?page=dashboard'" class="nav-item">Dashboard</a>
-        <a href="javascript:window.location.search ='?page=modelos'" class="nav-item">Modelos</a>
+        <a href="javascript:window.location.search =?page=home" class="nav-item">Home</a>
+        <a href="javascript:window.location.search =?page=dashboard" class="nav-item">Dashboard</a>
+        <a href="javascript:window.location.search =?page=modelos" class="nav-item">Modelos</a>
     </nav>
 """, unsafe_allow_html=True)
 
