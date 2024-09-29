@@ -54,7 +54,7 @@ def home_page():
     
     # Título del proyecto centrado
     st.markdown("""
-    <h1 style="text-align: center;">ARCOPE - PROYECTO FINAL</h1>
+    <h1 style="text-align: center; "><b>ARCOPE - PROYECTO FINAL</b></h1>
     """, unsafe_allow_html=True)
 
     # Divisor arcoíris
