@@ -160,8 +160,8 @@ st.markdown(f"""
         <a href="?page=home" class="nav-item">Home</a>
         <a href="?page=dashboard" class="nav-item">Dashboard</a>
         <a href="?page=modelos" class="nav-item">Modelos</a>
-        <div id="MainMenu"  style="z-index: 1001;">Menu</div>
     </nav>
+    <div id="MainMenu"  style="z-index: 1001;"></div>
 """, unsafe_allow_html=True)
 
 # Mostrar el menú de Streamlit (los tres puntos) debajo del navbar
