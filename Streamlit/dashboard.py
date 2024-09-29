@@ -1,6 +1,9 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+import home  # Importar la página 'home.py'
+import dashboard
+import modelos
 
 # Definir función principal para manejar pestañas
 def dashboard_page():
