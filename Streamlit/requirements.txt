@@ -7,3 +7,4 @@ Pillow
 gensim
 scipy
 scikit-learn
+plotly
