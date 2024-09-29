@@ -141,7 +141,10 @@ st.markdown("""
 
         }
 
-
+        .navbar-container {
+            display: flex;
+            flex-direction: column;
+        }
 
         .main-content {
 
