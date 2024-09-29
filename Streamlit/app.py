@@ -54,11 +54,11 @@ st.markdown("""
 
     <style>
 
-        
+        #MainMenu {visibility: hidden;} /* Ocultar el menú de arriba a la derecha */
 
         footer {visibility: hidden;} /* Ocultar el pie de página */
 
-        
+        header {visibility: hidden;} /* Ocultar el header */
 
         .css-18e3th9 {padding: 0;} /* Eliminar padding sobrante */
 
@@ -162,6 +162,7 @@ st.markdown(f"""
         <a href="?page=home" class="nav-item">Home</a>
         <a href="?page=dashboard" class="nav-item">Dashboard</a>
         <a href="?page=modelos" class="nav-item">Modelos</a>
+        <div id="MainMenu"></div>
     </nav>
 """, unsafe_allow_html=True)
 
