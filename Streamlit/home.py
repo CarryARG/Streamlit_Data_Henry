@@ -53,7 +53,10 @@ def home_page():
     )
     
     # Título del proyecto
-    st.title("ARCOPE Proyecto Final - Henry", divider='rainbow')
+    st.title("ARCOPE Proyecto Final - Henry")
+
+    # Divisor arcoíris
+    st.markdown("<hr style='border: 2px solid rainbow;'>", unsafe_allow_html=True)
     
     # Descripción del proyecto
     st.markdown("""
