@@ -9,16 +9,21 @@ import modelos
 def dashboard_page():
     
 # Estilo CSS para ocultar la barra lateral
+    # Barra lateral personalizada con CSS para moverla
     st.markdown(
-    """
-    <style>
-    .css-1d391kg {
-        display: none;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+        """
+        <style>
+        .css-1d391kg {
+            position: absolute;
+            top: 60px; /* Ajusta este valor según la altura de tu navbar */
+            left: 0;
+            width: 100%;
+            z-index: 0; /* Asegúrate de que esté detrás del navbar */
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
 
     # Encabezado principal con formato
     st.markdown("""
