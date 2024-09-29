@@ -227,19 +227,62 @@ def home_page():
     
     ---
     """)
-    # Tabla
-    st.markdown("""
-    | **Fase**                                  | **Herramientas y Tecnologías**                                                                                           |
-    |-------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
-    | **1. Ingesta de Datos y ETL**            | Python, Pandas, PyArrow, MinIO                                                                                           |
-    | **2. Ingreso en la Base de Datos**       | MySQL, phpMyAdmin, SQLAlchemy                                                                                              |
-    | **3. Entrenamiento de Machine Learning**  | Scikit-learn, Pickle, Jupyter Notebook                                                                                   |
-    | **4. Creación de Dashboards e Informes** | Matplotlib, Seaborn, Plotly, Jupyter Notebook, Streamlit/Dash                                                            |
-    | **5. Orquestador**                       | Apache Airflow                                                                                                            |
-    | **Infraestructura y Seguridad**           | Servidor Local, Configuración de MySQL para Acceso Remoto, SSH/VPN                                                        |
     
-    ---
-    """)
+    # Tabla con estilo CSS
+    st.markdown("""
+    <style>
+    .table-container {
+        background-color: black;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .table-container table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    .table-container th, .table-container td {
+        padding: 10px;
+        border: 1px solid white;
+    }
+    .table-container th {
+        background-color: #333;
+    }
+    </style>
+
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>**Fase**</th>
+                <th>**Herramientas y Tecnologías**</th>
+            </tr>
+            <tr>
+                <td>**1. Ingesta de Datos y ETL**</td>
+                <td>Python, Pandas, PyArrow, MinIO</td>
+            </tr>
+            <tr>
+                <td>**2. Ingreso en la Base de Datos**</td>
+                <td>MySQL, phpMyAdmin, SQLAlchemy</td>
+            </tr>
+            <tr>
+                <td>**3. Entrenamiento de Machine Learning**</td>
+                <td>Scikit-learn, Pickle, Jupyter Notebook</td>
+            </tr>
+            <tr>
+                <td>**4. Creación de Dashboards e Informes**</td>
+                <td>Matplotlib, Seaborn, Plotly, Jupyter Notebook, Streamlit/Dash</td>
+            </tr>
+            <tr>
+                <td>**5. Orquestador**</td>
+                <td>Apache Airflow</td>
+            </tr>
+            <tr>
+                <td>**Infraestructura y Seguridad**</td>
+                <td>Servidor Local, Configuración de MySQL para Acceso Remoto, SSH/VPN</td>
+            </tr>
+        </table>
+    </div>
+    """, unsafe_allow_html=True)
     st.markdown("""
     ### **Ejemplo de Diagrama:**
     
