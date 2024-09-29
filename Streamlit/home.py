@@ -57,13 +57,13 @@ def home_page():
     
     # Descripción del proyecto
     st.markdown("""
-    ## Proyecto: Data Product orientado a la sostenibilidad y rentabilidad para Uber en la ciudad de New York.
+    # Proyecto: Data Product orientado a la sostenibilidad y rentabilidad para Uber en la ciudad de New York.
     
-    ### Objetivo Principal:
-    ####Transformar el negocio de Uber en un referente de sostenibilidad y rentabilidad a largo plazo mediante la optimización operativa, la inversión en tecnología sustentable y la mejora de la imagen corporativa, para atraer tanto a clientes conscientes del medio ambiente como a inversores interesados en sostenibilidad.
+    ## Objetivo Principal:
+    ###Transformar el negocio de Uber en un referente de sostenibilidad y rentabilidad a largo plazo mediante la optimización operativa, la inversión en tecnología sustentable y la mejora de la imagen corporativa, para atraer tanto a clientes conscientes del medio ambiente como a inversores interesados en sostenibilidad.
     
-    ### Cliente Objetivo:
-    ####Empresa de Ride-Hailing, 'Uber', que conecta pasajeros con conductores de vehículos de alquiler a través de aplicaciones móviles y sitios web.
+    ## Cliente Objetivo:
+    ###Empresa de Ride-Hailing, 'Uber', que conecta pasajeros con conductores de vehículos de alquiler a través de aplicaciones móviles y sitios web.
     
     ### Estrategia de Negocio:
     Uber busca herramientas para mejorar su imagen corporativa, incrementar la rentabilidad y maximizar la eficiencia operativa, con el objetivo de alinear su negocio hacia un enfoque más sustentable y atractivo para los inversores.
