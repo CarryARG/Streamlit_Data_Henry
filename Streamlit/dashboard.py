@@ -34,23 +34,6 @@ def dashboard_page():
         df_yellow_taxi = pd.read_parquet('./Data/yellow_tripdata.parquet')
         df_vehicle_costs = pd.read_csv('./Data/costo_operacional_vehiculos_clean.csv')
         st.success("Datasets cargados correctamente")
-        @st.cache_data
-        def cargar_datos_resale():
-            return pd.read_csv('./Data/car_resale_prices_clean.csv')
-
-        @st.cache_data
-        def cargar_datos_taxis():
-            return pd.read_parquet('./Data/yellow_tripdata.parquet')
-
-        @st.cache_data
-        def cargar_datos_costos():
-            return pd.read_csv('./Data/costo_operacional_vehiculos_clean.csv')
-
-        # Cargar todos los datasets
-        df_car_resale = cargar_datos_resale()
-        df_yellow_taxi = cargar_datos_taxis()
-        df_vehicle_costs = cargar_datos_costos()
-
     except Exception as e:
         st.error(f"Error al cargar los datasets: {e}")
 
@@ -164,4 +147,3 @@ def dashboard_page():
             fig.update_xaxes(title_text="Costo Total (USD)")
             fig.update_yaxes(title_text="Frecuencia")
             st.plotly_chart(fig)
-
