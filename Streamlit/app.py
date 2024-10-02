@@ -46,7 +46,7 @@ st.markdown("""
 
 # Capturar los parámetros de consulta
 query_params = st.experimental_get_query_params()
-page = query_params.get("page", ["home"])[0]  # Página predeterminada es 'home'
+page = query_params.get("page", ["inicio"])[0]  # Página predeterminada es 'home'
 
 
 # CSS para personalizar el navbar y eliminar los espacios sobrantes
