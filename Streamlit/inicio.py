@@ -29,7 +29,7 @@ def inicio_page():
         st.markdown(page_bg_img, unsafe_allow_html=True)
     
     # Llamada a la función para establecer el fondo
-    set_background('./Streamlit/images/wallpaper_uber.jpg')
+    set_background('./Streamlit/images/wallpaper_uber.png')
     
     # Estructura de la página con Bootstrap y centrado
     st.markdown("""
