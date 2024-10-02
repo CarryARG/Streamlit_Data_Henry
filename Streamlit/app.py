@@ -1,10 +1,12 @@
 import streamlit as st
 
-import home  # Importar la página 'home.py'
+import acercaDe  # Importar la página 'home.py'
 
 import dashboard  # Importar la página 'dashboard.py'
 
 import modelos  # Importar la página 'modelos_ml.py'
+
+import inicio # Importar la página 'inicio.py'
 
 import base64
 
@@ -143,9 +145,10 @@ st.markdown("""
 # HTML para el Navbar utilizando Bootstrap con los botones personalizados
 st.markdown(f"""
     <nav class="navbar-custom">
-        <a href="?page=home" class="nav-item" style="color: whitesmoke; font-size: 18px;">Home</a>
+        <a href="?page=inicio" class="nav-item" style="color: whitesmoke; font-size: 18px;">Inicio</a>
         <a href="?page=dashboard" class="nav-item" style="color: whitesmoke; font-size: 18px;">Dashboard</a>
         <a href="https://nuevointentopf-an6ttk3gdgcejtdm5ebrfz.streamlit.app/" class="nav-item" style="color: whitesmoke; font-size: 18px;">Modelos</a>
+        <a href="?page=acercaDe" class="nav-item" style="color: whitesmoke; font-size: 18px;">Acerca De</a>
     </nav>
 """, unsafe_allow_html=True)
 
@@ -156,14 +159,17 @@ st.markdown("""
     </div>
 """, unsafe_allow_html=True)
 
-if page == "home":
-    st.experimental_set_query_params(page="home")
-    home.home_page()
+if page == "inicio":
+    st.experimental_set_query_params(page="inicio")
+    inicio.inicio_page()
 elif page == "dashboard":
     st.experimental_set_query_params(page="dashboard")
     dashboard.dashboard_page()
 elif page == "modelos":
     st.experimental_set_query_params(page="modelos")
     modelos.modelos_page()
+elif page == "acercaDe":
+    st.experimental_set_query_params(page="acercaDe")
+    acercaDe.acerdaDe_page()
 else:
     st.error("Página no encontrada")
