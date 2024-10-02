@@ -1,5 +1,5 @@
 import streamlit as st
-import acercaDe  # Importar la página 'home.py'
+import acercaDe  # Importar la página 'acercaDe.py'
 import dashboard  # Importar la página 'dashboard.py'
 import modelos  # Importar la página 'modelos_ml.py'
 import inicio # Importar la página 'inicio.py'
@@ -65,9 +65,9 @@ st.markdown("""
 
         .nav-item {
 
-            background-color: #F2A649;
+            background-color: #1fbad6; /* Azul claro */
 
-            color: #FFF;
+            color: #c0c0c8; /* Gris claro */
 
             padding: 10px 20px;
 
@@ -81,7 +81,7 @@ st.markdown("""
 
         .nav-item:hover {
 
-            background-color: #F25E3D; /* Color más oscuro para el hover */
+            background-color: #222233; /* Azul oscuro al hacer hover */
             box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
             text-decoration: none; /* Eliminar subrayado */
             transform: scale(1.2); /* Aumentar el tamaño al pasar el mouse */
@@ -92,7 +92,7 @@ st.markdown("""
 
         .navbar-custom {
 
-            background-color: #000000;
+            background-color: #09091a; /* Casi negro para el navbar */
 
             padding: 20px;
 
