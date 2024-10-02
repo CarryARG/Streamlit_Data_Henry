@@ -1,6 +1,4 @@
 import streamlit as st
-import home  # Importar la página 'home.py'
-import streamlit as st
 import acercaDe  # Importar la página 'home.py'
 import dashboard  # Importar la página 'dashboard.py'
 import modelos  # Importar la página 'modelos_ml.py'
