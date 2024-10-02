@@ -165,6 +165,6 @@ elif page == "modelos":
     modelos.modelos_page()
 elif page == "acercaDe":
     st.experimental_set_query_params(page="acercaDe")
-    acercaDe.acerdaDe_page()
+    acercaDe.acercaDe_page()
 else:
     st.error("Página no encontrada")
