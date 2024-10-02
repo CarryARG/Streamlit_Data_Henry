@@ -14,12 +14,7 @@ def get_image_b64(image_path):
   except FileNotFoundError:
       return None
 
-def inicio_page():
-  import streamlit as st
-  
-  # Configurar la página en modo "wide"
-  st.set_page_config(layout="wide")
-  
+def inicio_page():  
   # CSS para personalizar el estilo
   page_bg_img = '''
   <style>
