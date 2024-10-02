@@ -13,26 +13,30 @@ def get_image_b64(image_path):
             return base64.b64encode(image_file.read()).decode()
     except FileNotFoundError:
         return None
-
+        
 def inicio_page():
     # CSS para estilizar el fondo y el contenido
     page_bg_img = f'''
     <style>
     body {{
-        background-image: url("data:image/png;base64,{get_image_b64('/mnt/data/image.png')}");
+        background-image: url("data:image/png;base64,{get_image_b64('./Streamlit/images/wallpaper_uber.jpg')}");
         background-size: cover;
         background-position: center;
-        opacity: 0.9;  /* Ajustar la opacidad */
+        background-repeat: no-repeat;
     }}
 
     .stApp {{
         background: rgba(34, 34, 51, 0.7);  /* Fondo semitransparente para el contenido */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
     }}
 
     h1 {{
         color: #1fbad6;
         text-align: center;
-        margin-top: 50px;
         font-size: 48px;
         font-weight: bold;
     }}
@@ -41,7 +45,6 @@ def inicio_page():
         color: #c0c0c8;
         text-align: center;
         font-size: 22px;
-        margin-top: -10px;
     }}
 
     .centered {{
@@ -49,7 +52,6 @@ def inicio_page():
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        height: 80vh;  /* Para centrar verticalmente */
     }}
     </style>
     '''
@@ -60,7 +62,7 @@ def inicio_page():
     st.markdown('<div class="centered">', unsafe_allow_html=True)
 
     # Mostrar el logo de Uber centrado
-    st.image("./Streamlit/images/uber_logo.png", width=300)
+    st.image("./Streamlit/images/uber_logo.png", width=200)
 
     # Título y descripción centrados
     st.markdown("<h1>Bienvenido a nuestro proyecto Uber</h1>", unsafe_allow_html=True)
@@ -75,3 +77,4 @@ def get_image_b64(image_path):
             return base64.b64encode(image_file.read()).decode()
     except FileNotFoundError:
         return None
+
