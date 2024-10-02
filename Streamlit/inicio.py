@@ -15,7 +15,7 @@ def inicio_page():
         return base64.b64encode(data).decode()
     
     def set_background(png_file):
-        bin_str = get_base64(jpg_file)
+        bin_str = get_base64(png_file)
         page_bg_img = f'''
         <style>
         body {{
