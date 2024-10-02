@@ -8,7 +8,7 @@ from PIL import Image
 
         
 def inicio_page():
-    # Función para cargar la imagen de fondo
+    # Función para cargar la imagen de fondo desde una ruta local
     def get_base64(bin_file):
         with open(bin_file, 'rb') as f:
             data = f.read()
@@ -28,7 +28,7 @@ def inicio_page():
         '''
         st.markdown(page_bg_img, unsafe_allow_html=True)
     
-    # Llamada a la función para establecer el fondo
+    # Cambia la ruta según donde esté la imagen
     set_background('./Streamlit/images/wallpaper_uber.png')
     
     # Estructura de la página con Bootstrap y centrado
