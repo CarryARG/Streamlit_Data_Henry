@@ -15,53 +15,63 @@ def get_image_b64(image_path):
         return None
 
 def inicio_page():
-    # CSS básico para personalizar el estilo
-    st.markdown("""
+    # CSS para estilizar el fondo y el contenido
+    page_bg_img = f'''
     <style>
-    /* Fondo de pantalla sombreado */
-    .stApp {
-        background-image: url('https://via.placeholder.com/1920x1080.png');  /* Cambia por la ruta correcta */
+    body {{
+        background-image: url("data:image/png;base64,{get_image_b64('/mnt/data/image.png')}");
         background-size: cover;
         background-position: center;
-        filter: brightness(0.7);
-    }
+        opacity: 0.9;  /* Ajustar la opacidad */
+    }}
 
-    /* Contenedor centrado */
-    .center-content {
+    .stApp {{
+        background: rgba(34, 34, 51, 0.7);  /* Fondo semitransparente para el contenido */
+    }}
+
+    h1 {{
+        color: #1fbad6;
+        text-align: center;
+        margin-top: 50px;
+        font-size: 48px;
+        font-weight: bold;
+    }}
+
+    p {{
+        color: #c0c0c8;
+        text-align: center;
+        font-size: 22px;
+        margin-top: -10px;
+    }}
+
+    .centered {{
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 80vh; /* Altura para centrar verticalmente */
         flex-direction: column;
-        text-align: center;
-    }
-
-    /* Título de bienvenida */
-    h1 {
-        color: #1fbad6;
-        font-size: 48px;
-        margin-top: 20px;
-    }
-
-    /* Descripción */
-    p {
-        color: #c0c0c8;
-        font-size: 24px;
-        max-width: 800px;
-        margin: auto;
-    }
+        height: 80vh;  /* Para centrar verticalmente */
+    }}
     </style>
-    """, unsafe_allow_html=True)
-
-    # Contenedor para centrar el contenido
-    st.markdown('<div class="center-content">', unsafe_allow_html=True)
+    '''
     
-    # Mostrar logo de Uber centrado
+    st.markdown(page_bg_img, unsafe_allow_html=True)
+
+    # Crear el contenedor para centrar el contenido
+    st.markdown('<div class="centered">', unsafe_allow_html=True)
+
+    # Mostrar el logo de Uber centrado
     st.image("./Streamlit/images/uber_logo.png", width=300)
 
     # Título y descripción centrados
     st.markdown("<h1>Bienvenido a nuestro proyecto Uber</h1>", unsafe_allow_html=True)
     st.markdown("<p>Explorando la revolución del transporte con análisis y predicciones para mejorar la experiencia del usuario.</p>", unsafe_allow_html=True)
-    
-    # Cerrar el contenedor
+
     st.markdown('</div>', unsafe_allow_html=True)
+
+# Cargar la imagen de fondo en base64
+def get_image_b64(image_path):
+    try:
+        with open(image_path, "rb") as image_file:
+            return base64.b64encode(image_file.read()).decode()
+    except FileNotFoundError:
+        return None
