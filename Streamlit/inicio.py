@@ -6,75 +6,40 @@ import inicio # Importar la página 'inicio.py'
 import base64
 from PIL import Image
 
-# Función para cargar imágenes en base64
-def get_image_b64(image_path):
-    try:
-        with open(image_path, "rb") as image_file:
-            return base64.b64encode(image_file.read()).decode()
-    except FileNotFoundError:
-        return None
         
 def inicio_page():
-    # CSS para estilizar el fondo y el contenido
-    page_bg_img = f'''
-    <style>
-    body {{
-        background-image: url("data:image/png;base64,{get_image_b64('./Streamlit/images/wallpaper_uber.jpg')}");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }}
-
-    .stApp {{
-        background: rgba(34, 34, 51, 0.7);  /* Fondo semitransparente para el contenido */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }}
-
-    h1 {{
-        color: #1fbad6;
-        text-align: center;
-        font-size: 48px;
-        font-weight: bold;
-    }}
-
-    p {{
-        color: #c0c0c8;
-        text-align: center;
-        font-size: 22px;
-    }}
-
-    .centered {{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }}
-    </style>
-    '''
+    # Función para cargar la imagen de fondo
+    def get_base64(bin_file):
+        with open(bin_file, 'rb') as f:
+            data = f.read()
+        return base64.b64encode(data).decode()
     
-    st.markdown(page_bg_img, unsafe_allow_html=True)
-
-    # Crear el contenedor para centrar el contenido
-    st.markdown('<div class="centered">', unsafe_allow_html=True)
-
-    # Mostrar el logo de Uber centrado
-    st.image("./Streamlit/images/uber_logo.png", width=200)
-
-    # Título y descripción centrados
-    st.markdown("<h1>Bienvenido a nuestro proyecto Uber</h1>", unsafe_allow_html=True)
-    st.markdown("<p>Explorando la revolución del transporte con análisis y predicciones para mejorar la experiencia del usuario.</p>", unsafe_allow_html=True)
-
-    st.markdown('</div>', unsafe_allow_html=True)
-
-# Cargar la imagen de fondo en base64
-def get_image_b64(image_path):
-    try:
-        with open(image_path, "rb") as image_file:
-            return base64.b64encode(image_file.read()).decode()
-    except FileNotFoundError:
-        return None
-
+    def set_background(png_file):
+        bin_str = get_base64(png_file)
+        page_bg_img = f'''
+        <style>
+        body {{
+            background-image: url("data:image/png;base64,{bin_str}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }}
+        </style>
+        '''
+        st.markdown(page_bg_img, unsafe_allow_html=True)
+    
+    # Llamada a la función para establecer el fondo
+    set_background('./Streamlit/images/wallpaper_uber.jpg')
+    
+    # Estructura de la página con Bootstrap y centrado
+    st.markdown("""
+        <div class="container-fluid d-flex justify-content-center align-items-center" style="height: 100vh;">
+            <div class="row text-center">
+                <div class="col">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Uber_logo_2018.png" alt="Uber Logo" style="width: 150px;">
+                    <h1 class="mt-3" style="color: #56B5BF;">Bienvenido a nuestro proyecto Uber</h1>
+                    <p style="color: #F2F2F2;">Explorando la revolución del transporte con análisis y predicciones para mejorar la experiencia del usuario.</p>
+                </div>
+            </div>
+        </div>
+    """, unsafe_allow_html=True)
