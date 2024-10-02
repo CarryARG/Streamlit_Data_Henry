@@ -1,5 +1,5 @@
 import streamlit as st
-import home  # Importar la página 'home.py'
+import acercaDe  # Importar la página 'home.py'
 import dashboard
 import modelos
 import base64
@@ -13,7 +13,7 @@ def get_image_b64(image_path):
     except FileNotFoundError:
         return None
 
-def home_page():
+def acercaDe_page():
     # Cambiar el fondo de la página
     st.markdown(
         """
