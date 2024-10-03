@@ -16,7 +16,7 @@ def inicio_page():
     st.markdown("""
         <style>
         .stApp {
-            background-image: url("../Streamlit/images/wallpaper_uber.png");
+            background-image: url('./Streamlit/images/wallpaper_uber.png');
             background-size: cover;
         }
         </style>
