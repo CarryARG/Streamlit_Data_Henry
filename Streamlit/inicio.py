@@ -11,7 +11,6 @@ from PIL import Image
 import streamlit as st
 
 def inicio_page():
-    st.set_page_config(layout="wide")  # Ajusta el ancho de la página
 
     # Establecer el fondo
     st.markdown("""
