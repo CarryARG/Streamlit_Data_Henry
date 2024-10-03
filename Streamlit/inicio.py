@@ -25,7 +25,7 @@ def inicio_page():
         """
         <style>
             .index-page {
-                background-image: url('ruta/a/tu/fondo.jpg'); /* Asegúrate de colocar la ruta correcta */
+                background-image: url('./images/wallpaper_uber.png'); /* Asegúrate de colocar la ruta correcta */
                 background-size: cover;
                 background-position: center;
                 height: 100vh;
@@ -67,7 +67,7 @@ def inicio_page():
     <header id="header" class="header d-flex align-items-center fixed-top">
         <div class="container-fluid container-xl position-relative d-flex align-items-center">
             <a href="#" class="logo d-flex align-items-center me-auto">
-                <img src="ruta/a/logo_uber.png" alt="Logo Uber" style="width: 150px;"> <!-- Asegúrate de colocar la ruta correcta -->
+                <img src="./images/logo_uber1.png" alt="Logo Uber" style="width: 150px;"> <!-- Asegúrate de colocar la ruta correcta -->
             </a>
             <nav id="navmenu" class="navmenu">
                 <ul>
