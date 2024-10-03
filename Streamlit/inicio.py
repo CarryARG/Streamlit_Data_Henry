@@ -12,7 +12,7 @@ def set_background(png_file):
     with open(png_file, "rb") as image_file:
         encoded_string = base64.b64encode(image_file.read()).decode()
 
-    # Insertar la imagen en el fondo usando CSS y base64
+    # Insertar la imagen en el fondo con una superposición oscura usando CSS
     st.markdown(
         f"""
         <style>
@@ -22,6 +22,18 @@ def set_background(png_file):
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-position: center;
+            position: relative;
+        }}
+        /* Agregar una capa de superposición para oscurecer */
+        .stApp::before {{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Capa negra con 50% de opacidad */
+            z-index: 1; /* Debe estar debajo del contenido, pero encima del fondo */
         }}
         </style>
         """,
@@ -29,18 +41,21 @@ def set_background(png_file):
     )
 
 def inicio_page():
-    # Establecer fondo usando la imagen local codificada en base64
+    # Establecer el fondo usando la imagen local codificada en base64
     set_background('./Streamlit/images/wallpaper_uber.png')
 
-    # Estructura de la página con Bootstrap y centrado
+    # Estructura de la página con Bootstrap y centrado del contenido
     st.markdown("""
         <div class="container-fluid d-flex justify-content-center align-items-center" style="height: 100vh;">
             <div class="row text-center">
                 <div class="col">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Uber_logo_2018.png" alt="Uber Logo" style="width: 150px;">
+                    <img src="./Streamlit/images/uber_logo.png" alt="Uber Logo" style="width: 150px;">
                     <h1 class="mt-3" style="color: #56B5BF;">Bienvenido a nuestro proyecto Uber</h1>
                     <p style="color: #F2F2F2;">Explorando la revolución del transporte con análisis y predicciones para mejorar la experiencia del usuario.</p>
                 </div>
             </div>
         </div>
     """, unsafe_allow_html=True)
+
+# Ejecutar la página de inicio
+inicio_page()
