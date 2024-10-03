@@ -13,7 +13,7 @@ def set_background():
         """
         <style>
         .stApp {{
-            background-image: url("https://www.example.com/your-image-path.png");
+            background-image: url('./Streamlit/images/wallpaper_uber.png');
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
