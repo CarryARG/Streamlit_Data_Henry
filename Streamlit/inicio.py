@@ -29,7 +29,7 @@ def set_background(png_file):
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.5); /* Superposición negra con opacidad */
-            z-index: -1; /* Debe estar detrás del contenido */
+            z-index: 1; /* Debe estar detrás del contenido */
         }}
         </style>
         """,
@@ -41,7 +41,9 @@ def inicio_page():
     # Establecer el fondo usando la imagen local
     set_background('./Streamlit/images/wallpaper_uber.png')
 
-    
+    # Mostrar el logo usando st.image en lugar de HTML
+    st.markdown("<div style='height: 100px;'></div>", unsafe_allow_html=True)  # Espacio superior
+    st.image('./Streamlit/images/uber_logo.png', width=150)
 
     # Texto de bienvenida
     st.markdown("""
