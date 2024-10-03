@@ -42,7 +42,7 @@ def inicio_page():
     set_background('./Streamlit/images/wallpaper_uber.png')
 
     # Mostrar el logo usando st.image en lugar de HTML
-    st.markdown("<div style='height: 100px;'></div>", unsafe_allow_html=True)  # Espacio superior
+    
     st.image('./Streamlit/images/uber_logo.png', width=150)
 
     # Texto de bienvenida
