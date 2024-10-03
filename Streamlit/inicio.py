@@ -12,7 +12,7 @@ def set_background(png_file):
     with open(png_file, "rb") as image_file:
         encoded_string = base64.b64encode(image_file.read()).decode()
 
-    # Insertar la imagen en el fondo usando CSS y base64
+    # Insertar la imagen en el fondo sin superposición
     st.markdown(
         f"""
         <style>
@@ -22,11 +22,13 @@ def set_background(png_file):
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-position: center;
+            position: relative;
         }}
         </style>
         """,
         unsafe_allow_html=True
     )
+
 
 def inicio_page():
     # Establecer fondo usando la imagen local codificada en base64
