@@ -126,7 +126,7 @@ st.markdown("""
 
         .main-content {
 
-            margin-top: 80px;  /* Ajusta según la altura del navbar */
+            margin-top: 0px;  /* Ajusta según la altura del navbar */
 
         }
 
