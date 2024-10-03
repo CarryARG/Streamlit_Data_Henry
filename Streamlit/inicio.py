@@ -38,9 +38,8 @@ def inicio_page():
         """
         <div class="container-fluid d-flex justify-content-center align-items-center" style="height: 100vh;">
             <div class="row text-center">
-                <img src="./images/uber_logo.png" alt="Uber Logo" style="width: 150px;">  
                 <div class="col">
-                    <h1 class="mt-3" style="color: #56B5BF;">Bienvenido a nuestro proyecto Uber</h1>
+                    <img src="./images/uber_logo.png" alt="Uber Logo" style="width: 150px;">  <h1 class="mt-3" style="color: #56B5BF;">Bienvenido a nuestro proyecto Uber</h1>
                     <p style="color: #F2F2F2;">Explorando la revolución del transporte con análisis y predicciones para mejorar la experiencia del usuario.</p>
                 </div>
             </div>
