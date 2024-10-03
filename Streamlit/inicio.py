@@ -36,7 +36,7 @@ def inicio_page():
     set_background('./Streamlit/images/wallpaper_uber.png')
 
     # Obtener la imagen del logo en base64
-    logo_b64 = get_image_b64('./Streamlit/images/uber_logo.png')
+    logo_b64 = get_image_b64('./Streamlit/images/uber_logo1.png')
     
     # Comprobar si se ha cargado correctamente el logo
     if logo_b64:
