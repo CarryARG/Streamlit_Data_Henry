@@ -49,5 +49,3 @@ def inicio_page():
     )
 
 
-# Assuming your app starts from the 'inicio' page
-inicio_page()
