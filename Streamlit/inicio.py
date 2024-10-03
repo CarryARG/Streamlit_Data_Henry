@@ -1,6 +1,10 @@
 import streamlit as st
 import base64
 from PIL import Image
+import acercaDe
+import inicio
+import modelos
+import dashboard
 
 # Función para convertir imagen a base64
 def get_image_b64(image_path):
