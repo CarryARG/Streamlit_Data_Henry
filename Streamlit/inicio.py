@@ -16,10 +16,15 @@ def get_image_b64(image_path):
         return None
 
 def inicio_page():
-    <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh; background: url('./Streamlit/images/wallpaper_uber.png') no-repeat center center fixed; background-size: cover;">
+    # Importa los otros módulos o scripts si es necesario
+    # import home, dashboard, modelos, etc.
+    
+    # Contenido HTML para la tarjeta con Bootstrap
+    card_html = """
+    <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh; background: url('background-image-url.jpg') no-repeat center center fixed; background-size: cover;">
       <div class="card text-center" style="width: 18rem; background-color: rgba(0, 0, 0, 0.7); border: none;">
         <div class="card-body">
-          <img src="./Streamlit/images/uber_logo.png" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover;" alt="Logo">
+          <img src="logo.png" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover;" alt="Logo">
           <h5 class="card-title text-white mt-3">Nick Perez</h5>
           <p class="card-text text-white">Ingeniero de Software - Experto UI/UX</p>
           <div>
@@ -31,4 +36,10 @@ def inicio_page():
         </div>
       </div>
     </div>
+    """
+    
+    # Usamos st.markdown para integrar el HTML con Streamlit
+    st.markdown(card_html, unsafe_allow_html=True)
+    
+    # Recuerda ajustar las rutas de las imágenes y cualquier otro archivo externo
 
