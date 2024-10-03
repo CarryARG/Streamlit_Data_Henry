@@ -23,7 +23,7 @@ def inicio_page():
         """, unsafe_allow_html=True)
 
     # Mostrar el logo
-    st.image("./Streamlit/images/uber_logo.png")
+    st.image('./Streamlit/images/uber_logo.png')
 
     # Texto de bienvenida
     st.title("Bienvenido a nuestro proyecto Uber")
