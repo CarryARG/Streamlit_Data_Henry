@@ -2,7 +2,7 @@ import streamlit as st
 import base64
 from PIL import Image
 
-# Función para convertir una imagen en base64
+# Función para convertir imagen a base64
 def get_image_b64(image_path):
     try:
         with open(image_path, "rb") as image_file:
@@ -11,7 +11,7 @@ def get_image_b64(image_path):
         st.error(f"Image not found at {image_path}")
         return None
 
-# Función para establecer el fondo de la página
+# Establecer el fondo utilizando una imagen
 def set_background(png_file):
     encoded_image = get_image_b64(png_file)
     if encoded_image:
@@ -21,7 +21,6 @@ def set_background(png_file):
             .stApp {{
                 background-image: url("data:image/png;base64,{encoded_image}");
                 background-size: cover;
-                background-repeat: no-repeat;
                 background-position: center;
                 background-attachment: fixed;
             }}
@@ -30,53 +29,35 @@ def set_background(png_file):
             unsafe_allow_html=True,
         )
 
-# Estilos personalizados para el navbar, logo circular y eliminar espacios
+# Estilos de Bootstrap para el card y navbar
 def navbar_style():
     st.markdown(
         """
         <style>
-        /* Estilo del navbar */
-        .navbar {{
-            background-color: #000;
-            padding: 10px 20px;
+        /* Card centrado en el medio de la pantalla */
+        .card {{
+            max-width: 400px;
+            margin: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 15px;
+            padding: 20px;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }}
 
-        /* Botones del navbar */
-        .navbar a {{
-            color: #fff;
-            padding: 14px 20px;
-            text-decoration: none;
-            font-size: 18px;
-        }}
-
-        /* Efecto hover en los botones del navbar */
-        .navbar a:hover {{
-            background-color: #1c1c1c;
-            border-radius: 4px;
-        }}
-
-        /* Eliminar espacios en la parte superior */
-        .block-container {{
-            padding-top: 0 !important;
-        }}
-
-        /* Logo circular */
-        .logo {{
+        /* Imagen del perfil dentro del card */
+        .card img {{
             border-radius: 50%;
             width: 150px;
             height: 150px;
-            border: 5px solid #56B5BF;  /* Borde de color similar a la referencia */
+            margin: 0 auto;
+            display: block;
         }}
 
-        /* Centrando el contenido principal */
-        .content {{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;  /* Asegurarse de ocupar toda la pantalla */
-            color: white;
+        /* Título y subtítulo centrados */
+        .card h2, .card h4 {{
             text-align: center;
+            margin-top: 15px;
         }}
 
         /* Íconos sociales centrados */
@@ -95,25 +76,25 @@ def navbar_style():
         unsafe_allow_html=True,
     )
 
-# Página de inicio
+# Página principal con la tarjeta de perfil y el fondo
 def inicio_page():
-    # Aplicar el estilo del navbar
+    # Establecer el estilo con Bootstrap
     navbar_style()
 
-    # Establecer el fondo
+    # Colocar la imagen de fondo
     set_background('./Streamlit/images/wallpaper_uber.png')
 
-    # Obtener la imagen del logo en base64
-    logo_b64 = get_image_b64('./Streamlit/images/uber_logo1.png')
+    # Obtener imagen de perfil en base64
+    profile_pic_b64 = get_image_b64('./Streamlit/images/uber_logo1.png')
 
-    # Mostrar el logo circular y el texto
-    if logo_b64:
+    # Estructura del card en Bootstrap
+    if profile_pic_b64:
         st.markdown(
             f"""
-            <div class="content">
-                <img src="data:image/png;base64,{logo_b64}" alt="Uber Logo" class="logo">
-                <h1 style="color: #56B5BF; margin-top: 20px;">Nick Perez</h1>
-                <h3 style="color: #F2F2F2;">Ingeniero de Software - Experto UI/UX</h3>
+            <div class="card">
+                <img src="data:image/png;base64,{profile_pic_b64}" alt="Profile Picture">
+                <h2>Nick Perez</h2>
+                <h4>Ingeniero de Software - Experto UI/UX</h4>
                 <div class="social-icons">
                     <a href="#"><i class="fab fa-facebook"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
@@ -125,5 +106,5 @@ def inicio_page():
             unsafe_allow_html=True,
         )
     else:
-        st.error("Logo image not found!")
+        st.error("Profile image not found!")
 
