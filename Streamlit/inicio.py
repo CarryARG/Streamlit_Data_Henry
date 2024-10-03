@@ -7,32 +7,26 @@ import base64
 from PIL import Image
 
 
-def set_background(png_file):
-    # Cargar la imagen y codificarla en base64
-    with open(png_file, "rb") as image_file:
-        encoded_string = base64.b64encode(image_file.read()).decode()
-
-    # Insertar la imagen en el fondo sin superposición
+# Función para establecer el fondo
+def set_background():
     st.markdown(
-        f"""
+        """
         <style>
         .stApp {{
-            background-image: url("data:image/png;base64,{encoded_string}");
+            background-image: url('./Streamlit/images/wallpaper_uber.png');
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-position: center;
-            position: relative;
         }}
         </style>
         """,
         unsafe_allow_html=True
     )
 
-
 def inicio_page():
-    # Establecer fondo usando la imagen local codificada en base64
-    set_background('./Streamlit/images/wallpaper_uber.png')
+    # Establecer fondo (si es una URL pública o una ruta correcta)
+    set_background()
 
     # Estructura de la página con Bootstrap y centrado
     st.markdown("""
