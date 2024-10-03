@@ -11,100 +11,19 @@ def get_image_b64(image_path):
         st.error(f"Image not found at {image_path}")
         return None
 
-# Establecer el fondo utilizando una imagen
-def set_background(png_file):
-    encoded_image = get_image_b64(png_file)
-    if encoded_image:
-        st.markdown(
-            f"""
-            <style>
-            .stApp {{
-                background-image: url("data:image/png;base64,{encoded_image}");
-                background-size: cover;
-                background-position: center;
-                background-attachment: fixed;
-            }}
-            </style>
-            """,
-            unsafe_allow_html=True,
-        )
-
-# Estilos de Bootstrap para el card y navbar
-def navbar_style():
-    st.markdown(
-        """
-        <style>
-        /* Card centrado en el medio de la pantalla */
-        .card {{
-            max-width: 400px;
-            margin: auto;
-            background-color: rgba(0, 0, 0, 0.8);
-            border-radius: 15px;
-            padding: 20px;
-            color: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }}
-
-        /* Imagen del perfil dentro del card */
-        .card img {{
-            border-radius: 50%;
-            width: 15px;
-            height: 15px;
-            margin: 0 auto;
-            display: block;
-        }}
-
-        /* Título y subtítulo centrados */
-        .card h2, .card h4 {{
-            text-align: center;
-            margin-top: 15px;
-        }}
-
-        /* Íconos sociales centrados */
-        .social-icons {{
-            display: flex;
-            justify-content: center;
-            margin-top: 15px;
-        }}
-        .social-icons a {{
-            color: white;
-            margin: 0 10px;
-            font-size: 24px;
-        }}
-        </style>
-        """,
-        unsafe_allow_html=True,
-    )
-
-# Página principal con la tarjeta de perfil y el fondo
-def inicio_page():
-    # Establecer el estilo con Bootstrap
-    navbar_style()
-
-    # Colocar la imagen de fondo
-    set_background('./Streamlit/images/wallpaper_uber.png')
-
-    # Obtener imagen de perfil en base64
-    profile_pic_b64 = get_image_b64('./Streamlit/images/uber_logo1.png')
-
-    # Estructura del card en Bootstrap
-    if profile_pic_b64:
-        st.markdown(
-            f"""
-            <div class="card">
-                <img src="data:image/png;base64,{profile_pic_b64}" alt="Profile Picture">
-                <h2>Nick Perez</h2>
-                <h4>Ingeniero de Software - Experto UI/UX</h4>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-github"></i></a>
-                </div>
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
-    else:
-        st.error("Profile image not found!")
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh; background: url('background-image-url.jpg') no-repeat center center fixed; background-size: cover;">
+  <div class="card text-center" style="width: 18rem; background-color: rgba(0, 0, 0, 0.7); border: none;">
+    <div class="card-body">
+      <img src="logo.png" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover;" alt="Logo">
+      <h5 class="card-title text-white mt-3">Nick Perez</h5>
+      <p class="card-text text-white">Ingeniero de Software - Experto UI/UX</p>
+      <div>
+        <a href="#" class="btn btn-outline-light btn-sm mx-1"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="btn btn-outline-light btn-sm mx-1"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="btn btn-outline-light btn-sm mx-1"><i class="fab fa-linkedin"></i></a>
+        <a href="#" class="btn btn-outline-light btn-sm mx-1"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
 
