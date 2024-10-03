@@ -59,9 +59,6 @@ def inicio_page():
         """, unsafe_allow_html=True
     )
     
-    # Contenido de la página
-    st.markdown('<div class="index-page">', unsafe_allow_html=True)
-    
     # Encabezado
     st.markdown('''
     <header id="header" class="header d-flex align-items-center fixed-top">
