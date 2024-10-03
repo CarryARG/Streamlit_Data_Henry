@@ -4,6 +4,7 @@ import dashboard  # Import the page 'dashboard.py'
 import modelos  # Import the page 'modelos_ml.py'
 import inicio  # Import the page 'inicio.py'
 from PIL import Image
+import base64
 
 def set_background(png_file):
     """Loads the image and sets it as the background using CSS."""
