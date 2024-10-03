@@ -6,31 +6,28 @@ import inicio # Importar la página 'inicio.py'
 import base64
 from PIL import Image
 
-        
-def inicio_page():
-    # Función para cargar la imagen de fondo desde una ruta local
-    def get_base64(bin_file):
-        with open(bin_file, 'rb') as f:
-            data = f.read()
-        return base64.b64encode(data).decode()
-    
-    def set_background(png_file):
-        bin_str = get_base64(png_file)
-        page_bg_img = f'''
+
+# Función para establecer el fondo
+def set_background():
+    st.markdown(
+        """
         <style>
-        body {{
-            background-image: url("data:image/png;base64,{bin_str}");
+        .stApp {{
+            background-image: url("https://www.example.com/your-image-path.png");
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
+            background-position: center;
         }}
         </style>
-        '''
-        st.markdown(page_bg_img, unsafe_allow_html=True)
-    
-    # Cambia la ruta según donde esté la imagen
-    set_background('./Streamlit/images/wallpaper_uber.png')
-    
+        """,
+        unsafe_allow_html=True
+    )
+
+def inicio_page():
+    # Establecer fondo (si es una URL pública o una ruta correcta)
+    set_background()
+
     # Estructura de la página con Bootstrap y centrado
     st.markdown("""
         <div class="container-fluid d-flex justify-content-center align-items-center" style="height: 100vh;">
