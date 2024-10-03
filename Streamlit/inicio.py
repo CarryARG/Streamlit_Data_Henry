@@ -1,51 +1,59 @@
 import streamlit as st
-import acercaDe  # Import the page 'home.py'
-import dashboard  # Import the page 'dashboard.py'
-import modelos  # Import the page 'modelos_ml.py'
-import inicio  # Import the page 'inicio.py'
-from PIL import Image
 import base64
+from PIL import Image
 
+# Función para convertir una imagen en base64
+def get_image_b64(image_path):
+    try:
+        with open(image_path, "rb") as image_file:
+            return base64.b64encode(image_file.read()).decode()
+    except FileNotFoundError:
+        st.error(f"Image not found at {image_path}")
+        return None
+
+# Función para establecer el fondo de la página
 def set_background(png_file):
-    """Loads the image and sets it as the background using CSS."""
-    with open(png_file, "rb") as image_file:
-        encoded_string = base64.b64encode(image_file.read()).decode()
+    encoded_image = get_image_b64(png_file)
+    if encoded_image:
+        st.markdown(
+            f"""
+            <style>
+            .stApp {{
+                background-image: url("data:image/png;base64,{encoded_image}");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: center;
+            }}
+            </style>
+            """,
+            unsafe_allow_html=True,
+        )
 
-    st.markdown(
-        f"""
-        <style>
-        .stApp {{
-            background-image: url("data:image/png;base64,{encoded_string}");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-position: center;
-        }}
-        </style>
-        """,
-        unsafe_allow_html=True,
-    )
-
-
+# Página de inicio
 def inicio_page():
-    """Displays the 'inicio' page with the logo from the specified path."""
-
-    # Set the background using the set_background function
+    # Establecer el fondo
     set_background('./Streamlit/images/wallpaper_uber.png')
 
-    # Structure the page with Bootstrap and center the content
-    st.markdown(
-        """
-        <div class="container-fluid d-flex justify-content-center align-items-center" style="height: 100vh;">
-            <div class="row text-center">
-                <div class="col">
-                    **Adjust the path based on your file structure:**
-                    <img src="./Streamlit/images/uber_logo1.png" alt="Uber Logo" style="width: 150px;">  <h1 class="mt-3" style="color: #56B5BF;">Bienvenido a nuestro proyecto Uber</h1>
-                    <p style="color: #F2F2F2;">Explorando la revolución del transporte con análisis y predicciones para mejorar la experiencia del usuario.</p>
+    # Obtener la imagen del logo en base64
+    logo_b64 = get_image_b64('./Streamlit/images/uber_logo.png')
+    
+    # Comprobar si se ha cargado correctamente el logo
+    if logo_b64:
+        # Mostrar el logo y el texto
+        st.markdown(
+            f"""
+            <div class="container-fluid d-flex justify-content-center align-items-center" style="height: 100vh;">
+                <div class="row text-center">
+                    <div class="col">
+                        <img src="data:image/png;base64,{logo_b64}" alt="Uber Logo" style="width: 150px;">
+                        <h1 class="mt-3" style="color: #56B5BF;">Bienvenido a nuestro proyecto Uber</h1>
+                        <p style="color: #F2F2F2;">Explorando la revolución del transporte con análisis y predicciones para mejorar la experiencia del usuario.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
-
+            """,
+            unsafe_allow_html=True,
+        )
+    else:
+        st.error("Logo image not found!")
