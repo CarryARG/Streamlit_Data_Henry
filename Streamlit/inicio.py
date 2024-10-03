@@ -22,28 +22,28 @@ def set_background(png_file):
                 background-image: url("data:image/png;base64,{encoded_image}");
                 background-size: cover;
                 background-repeat: no-repeat;
-                background-attachment: fixed;
                 background-position: center;
+                background-attachment: fixed;
             }}
             </style>
             """,
             unsafe_allow_html=True,
         )
 
-# Estilos personalizados para el navbar y logo circular
+# Estilos personalizados para el navbar, logo circular y eliminar espacios
 def navbar_style():
     st.markdown(
         """
         <style>
-        /* Estilo del navbar con colores de Uber */
+        /* Estilo del navbar */
         .navbar {{
-            background-color: #000; /* Color negro */
+            background-color: #000;
             padding: 10px 20px;
         }}
 
         /* Botones del navbar */
         .navbar a {{
-            color: #fff;  /* Texto en blanco */
+            color: #fff;
             padding: 14px 20px;
             text-decoration: none;
             font-size: 18px;
@@ -51,7 +51,7 @@ def navbar_style():
 
         /* Efecto hover en los botones del navbar */
         .navbar a:hover {{
-            background-color: #1c1c1c; /* Color gris oscuro al hacer hover */
+            background-color: #1c1c1c;
             border-radius: 4px;
         }}
 
@@ -62,9 +62,33 @@ def navbar_style():
 
         /* Logo circular */
         .logo {{
-            border-radius: 50%;  /* Borde circular */
+            border-radius: 50%;
             width: 150px;
             height: 150px;
+            border: 5px solid #56B5BF;  /* Borde de color similar a la referencia */
+        }}
+
+        /* Centrando el contenido principal */
+        .content {{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;  /* Asegurarse de ocupar toda la pantalla */
+            color: white;
+            text-align: center;
+        }}
+
+        /* Íconos sociales centrados */
+        .social-icons {{
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }}
+        .social-icons a {{
+            color: white;
+            margin: 0 10px;
+            font-size: 24px;
         }}
         </style>
         """,
@@ -81,19 +105,20 @@ def inicio_page():
 
     # Obtener la imagen del logo en base64
     logo_b64 = get_image_b64('./Streamlit/images/uber_logo1.png')
-    
-    # Comprobar si se ha cargado correctamente el logo
+
+    # Mostrar el logo circular y el texto
     if logo_b64:
-        # Mostrar el logo circular y el texto
         st.markdown(
             f"""
-            <div class="container-fluid d-flex justify-content-center align-items-center" style="height: 100vh;">
-                <div class="row text-center">
-                    <div class="col">
-                        <img src="data:image/png;base64,{logo_b64}" alt="Uber Logo" class="logo">
-                        <h1 class="mt-3" style="color: #56B5BF;">Bienvenido a nuestro proyecto Uber</h1>
-                        <p style="color: #F2F2F2;">Explorando la revolución del transporte con análisis y predicciones para mejorar la experiencia del usuario.</p>
-                    </div>
+            <div class="content">
+                <img src="data:image/png;base64,{logo_b64}" alt="Uber Logo" class="logo">
+                <h1 style="color: #56B5BF; margin-top: 20px;">Nick Perez</h1>
+                <h3 style="color: #F2F2F2;">Ingeniero de Software - Experto UI/UX</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
                 </div>
             </div>
             """,
@@ -101,14 +126,4 @@ def inicio_page():
         )
     else:
         st.error("Logo image not found!")
-    
-    # Agregar contenido debajo de la imagen con scroll
-    st.markdown(
-        """
-        <div style="margin-top: 50px;">
-            <h2 style="color: #56B5BF;">Información del Proyecto</h2>
-            <p style="color: #F2F2F2;">Aquí puedes agregar información relevante sobre el proyecto de Uber...</p>
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
+
