@@ -41,9 +41,7 @@ def inicio_page():
     # Establecer el fondo usando la imagen local
     set_background('./Streamlit/images/wallpaper_uber.png')
 
-    # Mostrar el logo usando st.image en lugar de HTML
     
-    st.image('./Streamlit/images/uber_logo.png', width=150)
 
     # Texto de bienvenida
     st.markdown("""
