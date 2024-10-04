@@ -17,10 +17,10 @@ def set_background(png_file):
     if encoded_image:
         st.markdown(
             f"""
-            <div class="container-fluid d-flex justify-content-center align-items-center" style="background-size: cover; height: 200vh; background-image: url('data:image/png;base64,{encoded_image}'); background-size: cover; background-repeat: no-repeat; background-attachment: scroll; background-position: center; background-color: rgba(0,0,0,0.8); overflow: auto;">
-                <div class="row text-center">
-                    <div class="col">
-                        </div>
+            <div class="container-fluid d-flex justify-content-center align-items-center" style="background-size: cover; height: 80vh; background-image: url('data:image/png;base64,{encoded_image}'); background-repeat: no-repeat; background-attachment: scroll; background-position: center; background-color: rgba(0,0,0,0.8); overflow: auto;">
+                <div class="col">  <img src="data:image/png;base64,{logo_b64}" alt="Uber Logo" style="width: 180px; margin-top: 1rem; border-radius: 50%;">  
+                        <p>&nbsp;</p>
+                        <h1 class="mt-1" style="color: #ffffff; text-shadow: 6px 6px 9.5px #000000; font-size: 4.2rem; font-weight: bold;">Data Product by Arcope</h1>
                 </div>
             </div>
             """,
