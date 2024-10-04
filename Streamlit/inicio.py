@@ -88,3 +88,7 @@ def inicio_page():
         )
     else:
         st.error("Canva image not found!")
+
+    # Add extra content for scroll visibility (optional)
+    for _ in range(10):
+        st.write("This is a scrollable content block to demonstrate scrolling with background movement.")
