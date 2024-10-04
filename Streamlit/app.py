@@ -67,7 +67,7 @@ st.markdown("""
 
             background-color: #ffffff; /* Azul claro */
 
-            color: #000000; /* Gris claro */
+            color: #ffffff; /* Gris claro */
 
             padding: 10px 20px;
 
