@@ -11,36 +11,23 @@ def get_image_b64(image_path):
         st.error(f"Image not found at {image_path}")
         return None
 
-# Function to set the background of a div instead of the entire page
-def set_background_div(png_file):
+# Function to set the background of the page with a slight transparency
+def set_background(png_file):
     encoded_image = get_image_b64(png_file)
     if encoded_image:
         st.markdown(
             f"""
             <style>
-            html, body {{
-                margin: 0;
-                padding: 0;
-                height: 100%;
-                width: 100%;
-                overflow: hidden; /* Esto ayuda a evitar barras de desplazamiento indeseadas */
-            }}
-            .background-div {{
+            .stApp {{
                 background-image: url("data:image/png;base64,{encoded_image}");
                 background-size: cover;
                 background-repeat: no-repeat;
-                background-attachment: fixed; /* Cambiado a fixed para un efecto de parallax */
+                background-attachment: scroll;
                 background-position: center;
-                height: 100vh; /* Asegúrate de que ocupe el 100% de la altura */
-                padding: 0;
-                margin: 0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column; /* Para centrar el contenido verticalmente */
+                background-color: rgba(0,0,0,0.8);
+                overflow: auto;
             }}
             </style>
-            <div class="background-div">
             """,
             unsafe_allow_html=True,
         )
@@ -50,6 +37,8 @@ canva_b64 = get_image_b64('./Streamlit/images/canva.png')
 
 # Function to set the logo and reduce space between navbar and logo
 def inicio_page():
+    # Set the background with 80% opacity
+    set_background('./Streamlit/images/wallpaper_uber.png')
 
     # Get the logo image in base64
     logo_b64 = get_image_b64('./Streamlit/images/uber_logo1.png')
@@ -73,12 +62,6 @@ def inicio_page():
         )
     else:
         st.error("Logo image not found!")
-        
-    # Set the background with 80% opacity
-    set_background_div('./Streamlit/images/wallpaper_uber.png')
-
-    # Close the background div
-    st.markdown("</div>", unsafe_allow_html=True)
 
     # Check if Canva image is loaded correctly
     if canva_b64:
