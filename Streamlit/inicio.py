@@ -2,14 +2,6 @@ import streamlit as st
 import base64
 from PIL import Image
 
-# Function to convert an image to base64
-def get_image_b64(image_path):
-    try:
-        with open(image_path, "rb") as image_file:
-            return base64.b64encode(image_file.read()).decode()
-    except FileNotFoundError:
-        st.error(f"Image not found at {image_path}")
-        return None
 
 
 
@@ -18,7 +10,16 @@ canva_b64 = get_image_b64('./Streamlit/images/canva.png')
 
 # Function to set the logo and reduce space between navbar and logo
 def inicio_page():
-
+    
+# Function to convert an image to base64
+    def get_image_b64(image_path):
+        try:
+            with open(image_path, "rb") as image_file:
+                return base64.b64encode(image_file.read()).decode()
+        except FileNotFoundError:
+            st.error(f"Image not found at {image_path}")
+            return None
+        
     # Function to set the background of the page with a slight transparency
     def set_background(png_file):
         encoded_image = get_image_b64(png_file)
