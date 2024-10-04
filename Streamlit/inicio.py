@@ -18,10 +18,10 @@ def set_background(png_file):
         st.markdown(
             f"""
             <style>
-            .main {{
+            .stApp {{
                 margin: auto;
                 background-image: url("data:image/png;base64,{encoded_image}");
-                background-size: 400% 400%;
+                background-size: cover;
                 background-repeat: no-repeat;
                 background-attachment: scroll;
                 background-position: center;
@@ -69,6 +69,14 @@ def inicio_page():
         # Display Canva image with link and hover effect
         st.markdown(
             f"""
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
             <div class="container-fluid d-flex justify-content-center align-items-center" style="height: 30vh;">
                 <div class="row text-center">
                     <div class="col">
