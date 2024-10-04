@@ -10,7 +10,7 @@ import pandas as pd
 def modelos_page():
 
     # Importamos el dataset 
-    df_costo = pd.read_parquet('./Data/vehicles.parquet')
+    df_costo = pd.read_parquet('./Streamlit/data/vehicles.parquet')
 
     # Función para categorizar los vehículos
     def categorize_vehicle(row):
