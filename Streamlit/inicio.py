@@ -19,8 +19,9 @@ def set_background(png_file):
             f"""
             <style>
             .stApp {{
+                margin: auto;
                 background-image: url("data:image/png;base64,{encoded_image}");
-                background-size: cover;
+                background-size: 400% 400%;
                 background-repeat: no-repeat;
                 background-attachment: scroll;
                 background-position: center;
