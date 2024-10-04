@@ -11,23 +11,27 @@ def get_image_b64(image_path):
         st.error(f"Image not found at {image_path}")
         return None
 
-# Function to set the background of the entire page using the <body> tag
-def set_background(png_file):
+# Function to set the background of a div instead of the entire page
+def set_background_div(png_file):
     encoded_image = get_image_b64(png_file)
     if encoded_image:
         st.markdown(
             f"""
             <style>
-            body {{
+            .background-div {{
                 background-image: url("data:image/png;base64,{encoded_image}");
                 background-size: cover;
                 background-repeat: no-repeat;
-                background-attachment: scroll;  /* Allow the background to move with the content */
+                background-attachment: scroll;
                 background-position: center;
-                background-color: rgba(0, 0, 0, 0.8);  /* Optional transparency overlay */
-                overflow: auto;  /* Ensure scroll functionality */
+                background-color: rgba(0, 0, 0, 0.8);
+                min-height: 100vh;
+                padding: 0;
+                margin: 0;
+                overflow: auto;
             }}
             </style>
+            <div class="background-div">
             """,
             unsafe_allow_html=True,
         )
