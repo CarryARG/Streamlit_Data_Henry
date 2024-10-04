@@ -300,7 +300,7 @@ def modelos_page():
                 # Centrar imagen y usar el caption dinámico
                 st.markdown(f"""
                 <div style="text-align: center;" class="image-container">
-                    <img src="{image_url}" alt="Imagen del vehículo" width="400"/>
+                    <img src="{image_url}" alt="Imagen del vehículo" width="800"/>
                     <p>{caption_text}</p>
                 </div>
                 """, unsafe_allow_html=True)
