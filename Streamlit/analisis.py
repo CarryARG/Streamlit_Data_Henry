@@ -58,6 +58,9 @@ def analisis_page():
             fig = px.box(df_car_resale, x='Registered_Year', y='Resale_Price', title="Distribución de Precios de Reventa por Año de Registro")
             fig.update_xaxes(title_text="Año de Registro")
             fig.update_yaxes(title_text="Precio de Reventa (USD)")
+            # Ajustar el tamaño del gráfico
+            fig.update_layout(width=700, height=400)  # Puedes ajustar estos valores
+            
             st.plotly_chart(fig)
 
         with col2:
