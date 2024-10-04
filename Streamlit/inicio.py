@@ -71,6 +71,9 @@ def set_background(png_file):
             <p>&nbsp;</p>
             <p>&nbsp;</p>
             <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
             <div class="container-fluid d-flex justify-content-center align-items-center" style="height: 30vh;">
                 <div class="row text-center">
                     <div class="col">
