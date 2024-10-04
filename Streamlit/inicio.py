@@ -5,8 +5,7 @@ from PIL import Image
 
 
 
-# Get the Canva image in base64
-canva_b64 = get_image_b64('./Streamlit/images/canva.png')
+
 
 # Function to set the logo and reduce space between navbar and logo
 def inicio_page():
@@ -35,7 +34,8 @@ def inicio_page():
                 """,
                 unsafe_allow_html=True
             )
-    
+    # Get the Canva image in base64
+    canva_b64 = get_image_b64('./Streamlit/images/canva.png')
     # Call the set_background function
     set_background('./Streamlit/images/wallpaper_uber.png')
 
