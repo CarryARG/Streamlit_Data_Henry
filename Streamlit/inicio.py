@@ -20,8 +20,6 @@ def set_background(png_file, alpha=0.8):
             <style>
             .stApp {{
                 background-image: url("data:image/png;base64,{encoded_image}");
-                background-size: cover;
-                background-repeat: no-repeat;
 
                 background-color: rgba(0,0,0,{alpha});
             }}
