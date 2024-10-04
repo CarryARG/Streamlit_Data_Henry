@@ -30,7 +30,7 @@ def set_background(png_file):
             }}
             </style>
             """,
-            unsafe_allow_html=False,
+            unsafe_allow_html=True,
         )
     # Get the logo image in base64
     logo_b64 = get_image_b64('./Streamlit/images/uber_logo1.png')
