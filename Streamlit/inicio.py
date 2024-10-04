@@ -50,7 +50,7 @@ def inicio_page():
                         <img src="data:image/png;base64,{logo_b64}" alt="Uber Logo" style="width: 120px; margin-top: 1rem;">  
                         <p>&nbsp;</p>
                         <p>&nbsp;</p>
-                        <h1 class="mt-1" style="color: #ffffff; text-shadow: 3px 3px 5.5px #000000; font-size: 4.2rem; font-weight: bold;">Data Product by Arcope</h1>
+                        <h1 class="mt-1" style="color: #ffffff; text-shadow: 6px 6px 9.5px #000000; font-size: 4.2rem; font-weight: bold;">Data Product by Arcope</h1>
                     </div>
                 </div>
             </div>
