@@ -12,6 +12,7 @@ def get_image_b64(image_path):
         return None
 
 # Function to set the background of the page with a slight transparency
+# Function to set the background of the page with a slight transparency and scrolling
 def set_background(png_file, alpha=0.8):
     encoded_image = get_image_b64(png_file)
     if encoded_image:
