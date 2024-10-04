@@ -2,33 +2,30 @@ import streamlit as st
 import base64
 from PIL import Image
 
-# Function to convert an image to base64
-def get_image_b64(image_path):
-    try:
-        with open(image_path, "rb") as image_file:
-            return base64.b64encode(image_file.read()).decode()
-    except FileNotFoundError:
-        st.error(f"Image not found at {image_path}")
-        return None
-
-# Función para establecer el fondo de la página con la imagen y permitir el scroll
-def set_background(png_file):
+# Function to set the background of the page with a slight transparency
+# Function to set the background of the page with a slight transparency and scrolling
+def set_background(png_file, alpha=0.8):
     encoded_image = get_image_b64(png_file)
     if encoded_image:
         st.markdown(
             f"""
             <style>
-            stApp {{
+            body {{  /* Target the body element for scrolling */
                 background-image: url("data:image/png;base64,{encoded_image}");
                 background-size: cover;
                 background-repeat: no-repeat;
-                background-attachment: fixed;  background-position: center;
+                background-attachment: scroll;  /* Enable scrolling */
+                background-position: center;
+                background-color: rgba(0,0,0,0.8);
+                overflow: auto;  /* Allow content to overflow and scroll */
+            }}
+            .stApp {{  /* Adjust padding for content within the app */
+                padding: 2rem;  /* Add some space around the content */
             }}
             </style>
             """,
-            unsafe_allow_html=True
+            unsafe_allow_html=True,
         )
-
 
 # Get the Canva image in base64
 canva_b64 = get_image_b64('./Streamlit/images/canva.png')
