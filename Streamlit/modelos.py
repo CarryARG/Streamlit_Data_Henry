@@ -71,6 +71,7 @@ def modelos_page():
         /* Estilo para centrar las columnas en la parte superior */
         .stColumn {
             display: flex:
+            margin: 0 auto;
             height: 50%;
             justify-content: center;
             align-content: center;
