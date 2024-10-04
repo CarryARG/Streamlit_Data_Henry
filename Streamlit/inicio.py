@@ -17,7 +17,7 @@ def set_background(png_file):
     if encoded_image:
         st.markdown(
             f"""
-            <div class="container-fluid d-flex justify-content-center align-items-center" style="height: 100vh; background-image: url('data:image/png;base64,{encoded_image}'); background-size: cover; background-repeat: no-repeat; background-attachment: scroll; background-position: center; background-color: rgba(0,0,0,0.8); overflow: auto;">
+            <div class="container-fluid d-flex justify-content-center align-items-center" style="background-size: cover; height: 100vh; background-image: url('data:image/png;base64,{encoded_image}'); background-size: cover; background-repeat: no-repeat; background-attachment: scroll; background-position: center; background-color: rgba(0,0,0,0.8); overflow: auto;">
                 <div class="row text-center">
                     <div class="col">
                         </div>
