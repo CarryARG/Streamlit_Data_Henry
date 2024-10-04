@@ -18,7 +18,7 @@ def set_background(png_file):
         st.markdown(
             f"""
             <style>
-            body {{
+            stApp {{
                 background-image: url("data:image/png;base64,{encoded_image}");
                 background-size: cover;
                 background-repeat: no-repeat;
