@@ -369,7 +369,7 @@ def acercaDe_page():
             # Imagen del equipo
             persona_image = get_image_b64(persona["imagen_link"])
             if persona_image:
-                st.markdown(f'<div style="display: flex; justify-content: center; margin-bottom: 30px;"><img src="data:image/png;base64,{persona_image}" style="border-radius: 50%;" width="150"/></div>', unsafe_allow_html=True)  # Añadir margen abajo
+                st.markdown(f'<div style="display: flex; justify-content: center; margin-bottom: 40px;"><img src="data:image/png;base64,{persona_image}" style="border-radius: 50%;" width="150"/></div>', unsafe_allow_html=True)  # Añadir margen abajo
             
             # Logos de redes sociales
             linkedin_logo = get_image_b64("./Streamlit/images/LI-In-Bug.png")
