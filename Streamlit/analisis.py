@@ -51,7 +51,7 @@ def analisis_page():
                                                 labels=['1990-1995', '1996-2000', '2001-2005', '2006-2010', '2011-2015', '2016-2020'])
 
         # Layout mejorado: Usamos columnas para mostrar gráficas y filtros
-        col1, col2 = st.columns([2, 1])
+        col1, col2 = st.columns([2, 2])
 
         with col1:
             st.subheader("Distribución de Precios de Reventa por Año de Registro")
