@@ -84,6 +84,7 @@ def set_background(png_file):
                     </div>
                 </div>
             </div>
+            <p>&nbsp;</p>
             <style>
             .hover-image:hover {{
                 transform: scale(1.05);  /* Slight zoom on hover */
