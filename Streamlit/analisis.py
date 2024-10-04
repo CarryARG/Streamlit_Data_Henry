@@ -26,9 +26,7 @@ def analisis_page():
     analisis = st.sidebar.selectbox(
         'Selecciona el análisis',
         ('Análisis de Precios de Reventa de Autos', 
-         'Análisis de Viajes en Taxis Amarillos', 
-         'Análisis de Costos Operacionales de Vehículos',
-         'KPIs de Eficiencia y Costos Operacionales')
+         'Análisis de Costos Operacionales de Vehículos')
     )
 
     # Cargar los datasets utilizando rutas relativas
