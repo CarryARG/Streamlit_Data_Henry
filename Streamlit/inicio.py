@@ -48,8 +48,8 @@ def inicio_page():
                 <div class="row text-center">
                     <div class="col">
                         <img src="data:image/png;base64,{logo_b64}" alt="Uber Logo" style="width: 100px; margin-top: 1rem;">  
-                        <h1 class="mt-1" style="color: #ffffff; text-shadow: 1px 1px 2px #000000;">Bienvenido a nuestro proyecto Uber</h1>
-                        <h3 style="color: #ffffff; text-shadow: 1px 1px 2px #000000;">Explorando la revolución del transporte con análisis y predicciones para mejorar la experiencia del usuario.</h3>
+                        <h1 class="mt-1" style="color: #ffffff; text-shadow: 1px 1px 2px #000000;">Data Product by Arcope</h1>
+                        
                     </div>
                 </div>
             </div>
