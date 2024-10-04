@@ -297,13 +297,12 @@ def modelos_page():
                 image_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAynn1hP5HC3WnHtWHmrcMPpzVRpkYq9ZWQg&s"
                 caption_text = f"Imagen del vehículo: {seleccionados['Vehículo_unico']}"
 
-                # Centrar imagen y usar el caption dinámico
-                st.markdown(f"""
-                <div style="text-align: center;" class="image-container">
-                    <img src="{image_url}" alt="Imagen del vehículo" width="800"/>
-                    <p>{caption_text}</p>
-                </div>
-                """, unsafe_allow_html=True)
+                # URL de la imagen (ejemplo)
+                image_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAynn1hP5HC3WnHtWHmrcMPpzVRpkYq9ZWQg&s"
+                # Mostrar la imagen desde la URL con un caption dinámico basado en el vehículo seleccionado
+                st.image(image_url, caption=f"Imagen del vehículo: {seleccionados['Vehículo_unico']}", width=400)
+
+                
 
                 # Pedir al usuario que ingrese la cantidad de Kilometros
                 st.write('**Consumo energetico por kilometros**')
