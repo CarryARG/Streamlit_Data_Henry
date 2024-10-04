@@ -364,7 +364,7 @@ def acercaDe_page():
         with columns[idx]:
             # Nombre y profesión centrados
             st.markdown(f'<h2 style="text-align: center; margin-bottom: 10px;">{persona["nombre"]}</h2>', unsafe_allow_html=True)  # Aumentar el margen
-            st.markdown(f'<h4 style="text-align: center; color: gray; margin-bottom: 20px;">{persona["profesion"]}</h4>', unsafe_allow_html=True)  # Aumentar el margen
+            st.markdown(f'<h4 style="text-align: center; color: gray; margin-bottom: 40px;">{persona["profesion"]}</h4>', unsafe_allow_html=True)  # Aumentar el margen
             
             # Imagen del equipo
             persona_image = get_image_b64(persona["imagen_link"])
