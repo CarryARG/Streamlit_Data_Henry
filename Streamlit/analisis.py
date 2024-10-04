@@ -34,7 +34,6 @@ def analisis_page():
         df_car_resale = pd.read_csv('./Data/car_resale_prices_clean.csv')
         df_yellow_taxi = pd.read_parquet('./Data/yellow_tripdata.parquet')
         df_vehicle_costs = pd.read_csv('./Data/costo_operacional_vehiculos_clean.csv')
-        st.success("Datasets cargados correctamente")
     except Exception as e:
         st.error(f"Error al cargar los datasets: {e}")
 
