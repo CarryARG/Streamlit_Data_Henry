@@ -65,7 +65,7 @@ st.markdown("""
 
         .nav-item {
 
-            background-color: #FFFFFF; /* Azul claro */
+            background-color: #ffffff; /* Azul claro */
 
             color: #000000; /* Gris claro */
 
