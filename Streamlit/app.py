@@ -142,7 +142,7 @@ st.markdown(f"""
     <nav class="navbar-custom">
         <a href="?page=inicio" class="nav-item" style="color: whitesmoke; font-size: 18px;">Inicio</a>
         <a href="?page=dashboard" class="nav-item" style="color: whitesmoke; font-size: 18px;">Dashboard</a>
-        <a href="https://nuevointentopf-an6ttk3gdgcejtdm5ebrfz.streamlit.app/" class="nav-item" style="color: whitesmoke; font-size: 18px;">Modelos</a>
+        <a href="?page=modelos" class="nav-item" style="color: whitesmoke; font-size: 18px;">Modelos</a>
         <a href="?page=acercaDe" class="nav-item" style="color: whitesmoke; font-size: 18px;">Acerca De</a>
     </nav>
 """, unsafe_allow_html=True)
