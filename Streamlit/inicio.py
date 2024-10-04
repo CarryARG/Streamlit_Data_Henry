@@ -17,19 +17,14 @@ def set_background(png_file):
     if encoded_image:
         st.markdown(
             f"""
-            <style>
-            .stApp {{
-                background-image: url("data:image/png;base64,{encoded_image}");
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-attachment: scroll;
-                background-position: center;
-                background-color: rgba(0,0,0,0.8);
-                overflow: auto;
-            }}
-            </style>
+            <div class="container-fluid d-flex justify-content-center align-items-center" style="height: 100vh; background-image: url('data:image/png;base64,{encoded_image}'); background-size: cover; background-repeat: no-repeat; background-attachment: scroll; background-position: center; background-color: rgba(0,0,0,0.8); overflow: auto;">
+                <div class="row text-center">
+                    <div class="col">
+                        </div>
+                </div>
+            </div>
             """,
-            unsafe_allow_html=True,
+            unsafe_allow_html=True
         )
 
 # Get the Canva image in base64
@@ -37,7 +32,7 @@ canva_b64 = get_image_b64('./Streamlit/images/canva.png')
 
 # Function to set the logo and reduce space between navbar and logo
 def inicio_page():
-    # Set the background with 80% opacity
+    # Call the set_background function
     set_background('./Streamlit/images/wallpaper_uber.png')
 
     # Get the logo image in base64
