@@ -73,34 +73,8 @@ def analisis_page():
             else:
                 st.text(f"No se encontraron autos dentro del presupuesto de ${presupuesto_cliente}.")
 
-    # Sección 2: Análisis de Viajes en Taxis Amarillos
-    elif analisis == 'Análisis de Viajes en Taxis Amarillos':
-        st.header('🚕 Análisis de Viajes en Taxis Amarillos')
-        st.markdown("""
-        Descripción: Este análisis muestra la cantidad de viajes realizados por taxis amarillos a lo largo del tiempo.
-        """)
 
-        grafico_taxis = st.selectbox(
-            'Selecciona la gráfica para Viajes en Taxis Amarillos',
-            ('Cantidad de Viajes por Año', 'Distancia vs Duración del Viaje')
-        )
-
-        if grafico_taxis == 'Cantidad de Viajes por Año':
-            st.subheader("Cantidad de Viajes por Año")
-            df_yellow_taxi['pickup_year'] = pd.to_datetime(df_yellow_taxi['pickup_datetime']).dt.year
-            fig = px.histogram(df_yellow_taxi, x='pickup_year', title="Cantidad de Viajes por Año")
-            fig.update_xaxes(title_text="Año")
-            fig.update_yaxes(title_text="Número de Viajes")
-            st.plotly_chart(fig)
-        
-        elif grafico_taxis == 'Distancia vs Duración del Viaje':
-            st.subheader("Relación entre Distancia y Duración del Viaje")
-            fig = px.scatter(df_yellow_taxi, x='trip_distance', y='trip_duration', title="Distancia vs Duración del Viaje")
-            fig.update_xaxes(title_text="Distancia del Viaje (millas)")
-            fig.update_yaxes(title_text="Duración del Viaje (minutos)")
-            st.plotly_chart(fig)
-
-    # Sección 3: Análisis de Costos Operacionales de Vehículos
+    # Sección 2: Análisis de Costos Operacionales de Vehículos
     elif analisis == 'Análisis de Costos Operacionales de Vehículos':
         st.header('🚗 Análisis de Costos Operacionales de Vehículos')
         st.markdown("""
@@ -124,29 +98,3 @@ def analisis_page():
             st.subheader("Comparación de Costos de Combustibles")
             fuel_comparison = df_vehicle_costs.groupby('Fuel_Type')['Fuel_Cost'].mean().reset_index()
             st.table(fuel_comparison)
-
-    # Sección 4: KPIs de Eficiencia y Costos Operacionales
-    elif analisis == 'KPIs de Eficiencia y Costos Operacionales':
-        st.header('📊 KPIs de Eficiencia y Costos Operacionales')
-        st.markdown("""
-        Descripción: Este análisis presenta los KPIs relacionados con las emisiones de CO2 y los costos operacionales por tipo de vehículo.
-        """)
-
-        col1, col2 = st.columns(2)
-
-        # Gráfico CO2 por milla
-        with col1:
-            st.subheader("CO2 por milla para cada año")
-            df_convecional_filtrado = df_vehicle_costs[df_vehicle_costs['CO2 (p/mile)'] > 0]
-            fig = px.line(df_convecional_filtrado, x='Year', y='CO2 (p/mile)', title='CO2 por milla para cada año')
-            fig.update_xaxes(title_text='Años')
-            fig.update_yaxes(title_text='CO2 por milla')
-            st.plotly_chart(fig)
-        
-        # Comparación de costos operativos
-        with col2:
-            st.subheader("Comparación de Costos Operativos por Tipo de Vehículo")
-            fig = px.histogram(df_vehicle_costs, x="Total_Cost", color="Fuel_Type", barmode="overlay", nbins=50, title="Comparación de la Distribución de Costos Operativos por Tipo de Vehículo")
-            fig.update_xaxes(title_text="Costo Total (USD)")
-            fig.update_yaxes(title_text="Frecuencia")
-            st.plotly_chart(fig)
