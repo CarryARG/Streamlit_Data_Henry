@@ -18,17 +18,26 @@ def set_background_div(png_file):
         st.markdown(
             f"""
             <style>
+            html, body {{
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                width: 100%;
+                overflow: hidden; /* Esto ayuda a evitar barras de desplazamiento indeseadas */
+            }}
             .background-div {{
                 background-image: url("data:image/png;base64,{encoded_image}");
                 background-size: cover;
                 background-repeat: no-repeat;
-                background-attachment: scroll;
+                background-attachment: fixed; /* Cambiado a fixed para un efecto de parallax */
                 background-position: center;
-                background-color: rgba(0, 0, 0, 0.8);
-                min-height: 100vh;
+                height: 100vh; /* Asegúrate de que ocupe el 100% de la altura */
                 padding: 0;
                 margin: 0;
-                overflow: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column; /* Para centrar el contenido verticalmente */
             }}
             </style>
             <div class="background-div">
