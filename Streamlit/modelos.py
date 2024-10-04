@@ -103,20 +103,24 @@ def modelos_page():
         # Centrar imagen
         st.markdown("""
         <div style="text-align: center;">
-            <img src="https://fullandfast.com/blog/wp-content/uploads/2020/03/uber-vehiculo-electrico.jpg" alt="Amigables con el planeta" width="300"/>
+            <img src="https://fullandfast.com/blog/wp-content/uploads/2020/03/uber-vehiculo-electrico.jpg" alt="Amigables con el planeta" width="400"/>
             <p>Amigables con el planeta</p>
         </div>
         """, unsafe_allow_html=True)
         
-        st.image('https://fullandfast.com/blog/wp-content/uploads/2020/03/uber-vehiculo-electrico.jpg', caption="Amigables con el planeta", width=300)
         st.markdown("""
         <h2 style='text-align: center;'>Modelo de maximización operativa y preventa de vehículo</h2>
         """, unsafe_allow_html=True)
         st.write("""
         Para el modelo de maximización operativa y preventa de vehículo se tiene como objetivo dos predicciones, la primera donde podemos encontrar una gama de vehículos con los menores gastos operativos, apartir de esto se puede tomar una deciones de costo y beneficio a largo plazo, por ultimo tenemos un modelo que predice la preventa de un vehículo, lo cual nos permite saber que tan balorizado esta y de esta manera tomar la mejor decición a la hora de vender
         """)
-        st.image('https://www.redeweb.com/wp-content/uploads/2017/06/04_1881685204.jpg', caption="Pensando en tu economia", width=300)
-        
+        # Centrar imagen
+        st.markdown("""
+        <div style="text-align: center;">
+            <img src="https://www.redeweb.com/wp-content/uploads/2017/06/04_1881685204.jpg" alt="Pensando en tu economia" width="400"/>
+            <p>Amigables con el planeta</p>
+        </div>
+        """, unsafe_allow_html=True)
 
 
         # Pagina del modelo 1
@@ -138,7 +142,7 @@ def modelos_page():
         }
         </style>
         <div class="image-container">
-            <img src="https://pbs.twimg.com/profile_images/1042867341476995078/antCC8gJ_400x400.jpg" alt="Logo">
+            <img src="https://pbs.twimg.com/profile_images/1042867341476995078/antCC8gJ_400x400.jpg" alt="Logo" width="400">
         </div>
         """, unsafe_allow_html=True)
 
@@ -291,8 +295,15 @@ def modelos_page():
                 # Insertar una imagen del vehículo
                 # URL de la imagen (ejemplo)
                 image_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAynn1hP5HC3WnHtWHmrcMPpzVRpkYq9ZWQg&s"
-                # Mostrar la imagen desde la URL con un caption dinámico basado en el vehículo seleccionado
-                st.image(image_url, caption=f"Imagen del vehículo: {seleccionados['Vehículo_unico']}", width=400)
+                caption_text = f"Imagen del vehículo: {seleccionados['Vehículo_unico']}"
+
+                # Centrar imagen y usar el caption dinámico
+                st.markdown(f"""
+                <div style="text-align: center;" class="image-container">
+                    <img src="{image_url}" alt="Imagen del vehículo" width="400"/>
+                    <p>{caption_text}</p>
+                </div>
+                """, unsafe_allow_html=True)
 
                 # Pedir al usuario que ingrese la cantidad de Kilometros
                 st.write('**Consumo energetico por kilometros**')
