@@ -63,7 +63,7 @@ def analisis_page():
         with col2:
             st.subheader("Filtrar autos por presupuesto")
             presupuesto_cliente = st.number_input("Ingresa tu presupuesto (USD)", min_value=0, value=5000, step=1000)
-            autos_recomendados = df_car_resale[df_car_resale['Resale_Price'] <= presupuesto_cliente].sort_values(by='Resale_Price').head(5)
+            autos_recomendados = df_car_resale[df_car_resale['Resale_Price'] <= presupuesto_cliente].sort_values(by='Resale_Price', ascending=False).head(5)
             
             if not autos_recomendados.empty:
                 st.markdown(f"### Autos recomendados dentro del presupuesto de ${presupuesto_cliente}:")
