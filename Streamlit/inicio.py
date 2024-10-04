@@ -1,16 +1,8 @@
 import streamlit as st
 import base64
 from PIL import Image
-import acercaDe
-import inicio
-import modelos
-import dashboard
 
-
-    # Configuración de la página
-    # st.set_page_config(page_title="Inicio", page_icon="🏠")
-
-# Función para convertir imagen a base64
+# Función para convertir una imagen en base64
 def get_image_b64(image_path):
     try:
         with open(image_path, "rb") as image_file:
@@ -19,91 +11,49 @@ def get_image_b64(image_path):
         st.error(f"Image not found at {image_path}")
         return None
 
-def inicio_page():
-    # Estilos CSS para la página
-    st.markdown(
-        """
-        <style>
-            .index-page {
-                background-image: url('./images/wallpaper_uber.png'); /* Asegúrate de colocar la ruta correcta */
+# Función para establecer el fondo de la página
+def set_background(png_file):
+    encoded_image = get_image_b64(png_file)
+    if encoded_image:
+        st.markdown(
+            f"""
+            <style>
+            .stApp {{
+                background-image: url("data:image/png;base64,{encoded_image}");
                 background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
                 background-position: center;
-                height: 100vh;
-                color: white;
-            }
-            .logo {
-                display: flex;
-                align-items: center;
-                font-size: 24px;
-                color: #fff;
-            }
-            .hero {
-                padding: 50px 0;
-            }
-            .btn-get-started {
-                background-color: #F25A38; /* Color del botón */
-                color: white;
-                padding: 10px 20px;
-                border: none;
-                border-radius: 5px;
-                text-decoration: none;
-                margin-right: 10px;
-            }
-            .btn-get-started:hover {
-                background-color: #F25041; /* Color del botón al pasar el mouse */
-            }
-            h1, h2 {
-                font-weight: bold;
-            }
-        </style>
-        """, unsafe_allow_html=True
-    )
+            }}
+            </style>
+            """,
+            unsafe_allow_html=True,
+        )
+
+# Página de inicio
+def inicio_page():
+    # Establecer el fondo
+    set_background('./Streamlit/images/wallpaper_uber.png')
+
+    # Obtener la imagen del logo en base64
+    logo_b64 = get_image_b64('./Streamlit/images/uber_logo1.png')
     
-    # Encabezado
-    st.markdown('''
-    <header id="header" class="header d-flex align-items-center fixed-top">
-        <div class="container-fluid container-xl position-relative d-flex align-items-center">
-            <a href="#" class="logo d-flex align-items-center me-auto">
-                <img src="./images/logo_uber1.png" alt="Logo Uber" style="width: 150px;"> <!-- Asegúrate de colocar la ruta correcta -->
-            </a>
-            <nav id="navmenu" class="navmenu">
-                <ul>
-                    <li><a href="#hero" class="active">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#team">Team</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <a class="btn-get-started" href="#about">Get Started</a>
-        </div>
-    </header>
-    ''', unsafe_allow_html=True)
-    
-    # Sección Hero
-    st.markdown('''
-    <main class="main">
-        <section id="hero" class="hero section dark-background">
-            <div class="container">
-                <div class="row gy-4">
-                    <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="zoom-out">
-                        <h1>Better Solutions For Your Business</h1>
-                        <p>We are team of talented designers making websites with Bootstrap</p>
-                        <div class="d-flex">
-                            <a href="#about" class="btn-get-started">Get Started</a>
-                            <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
-                        <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
+    # Comprobar si se ha cargado correctamente el logo
+    if logo_b64:
+        # Mostrar el logo y el texto
+        st.markdown(
+            f"""
+            <div class="container-fluid d-flex justify-content-center align-items-center" style="height: 100vh;">
+                <div class="row text-center">
+                    <div class="col">
+                        <img src="data:image/png;base64,{logo_b64}" alt="Uber Logo" style="width: 150px;">
+                        <h1 class="mt-3" style="color: #56B5BF;">Bienvenido a nuestro proyecto Uber</h1>
+                        <p style="color: #F2F2F2;">Explorando la revolución del transporte con análisis y predicciones para mejorar la experiencia del usuario.</p>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
-    ''', unsafe_allow_html=True)
-    
-    st.markdown('</div>', unsafe_allow_html=True)
-
-
+            """,
+            unsafe_allow_html=True,
+        )
+    else:
+        st.error("Logo image not found!")
