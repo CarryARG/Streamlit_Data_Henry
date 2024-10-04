@@ -73,7 +73,7 @@ def modelos_page():
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 70%;
+            width: 100%;
         }
         </style>
     """, unsafe_allow_html=True)
