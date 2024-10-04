@@ -66,24 +66,24 @@ def acercaDe_page():
     
     # Descripción del proyecto
     st.markdown("""
-    ## Proyecto: Data Product orientado a la sostenibilidad y rentabilidad para Uber en la ciudad de New York.
+    # Proyecto: Data Product orientado a la sostenibilidad y rentabilidad para Uber en la ciudad de New York.
     
-    ### Objetivo Principal:
+    ## Objetivo Principal:
     #### Transformar el negocio de Uber en un referente de sostenibilidad y rentabilidad a largo plazo mediante la optimización operativa, la inversión en tecnología sustentable y la mejora de la imagen corporativa, para atraer tanto a clientes conscientes del medio ambiente como a inversores interesados en sostenibilidad.
     
-    ### Cliente Objetivo:
+    ## Cliente Objetivo:
     #### Empresa de Ride-Hailing, 'Uber', que conecta pasajeros con conductores de vehículos de alquiler a través de aplicaciones móviles y sitios web.
     
-    ### Estrategia de Negocio:
+    ## Estrategia de Negocio:
     #### Uber busca herramientas para mejorar su imagen corporativa, incrementar la rentabilidad y maximizar la eficiencia operativa, con el objetivo de alinear su negocio hacia un enfoque más sustentable y atractivo para los inversores.
     
-    ### Alcance:
+    ## Alcance:
     #### Proponemos un MVP centrado en analizar y procesar datos proporcionados por Uber y organismos gubernamentales, ofreciendo soluciones que permitan la toma de decisiones estratégicas basadas en sostenibilidad y rentabilidad.
     
-    ### Contexto:
+    ## Contexto:
     #### Ciudad de Nueva York, EEUU.
     
-    ### Justificación:
+    ## Justificación:
     #### El mercado está en plena transición hacia modelos sostenibles. Las empresas que adoptan prácticas sostenibles no solo mejoran su imagen pública, sino que también aseguran su rentabilidad a largo plazo al alinearse con normativas futuras. Este proyecto posicionará a Uber como líder en sostenibilidad en el sector Ride-Hailing, atrayendo a clientes conscientes del medio ambiente y ofreciendo nuevas oportunidades de negocio e incentivos fiscales.
     
     """)
@@ -92,7 +92,7 @@ def acercaDe_page():
     """, unsafe_allow_html=True)
     
     st.markdown("""
-    ## Objetivos Particulares:
+    # Objetivos Particulares:
     
     ### 1. Mejorar la Imagen Corporativa a través de la Sostenibilidad
     - **KPI**: Reducción de CO2 y mejora de la calidad del aire.
@@ -123,7 +123,7 @@ def acercaDe_page():
     """, unsafe_allow_html=True)
     
     st.markdown("""
-    ## Análisis de Impacto:
+    # Análisis de Impacto:
     ### Implementar estos KPIs proporcionará una visión clara del desempeño de Uber en términos de sostenibilidad y rentabilidad. Basándose en estos análisis, se podrán tomar decisiones estratégicas como expandir la flota de vehículos eléctricos, optimizar rutas para reducir emisiones y costos, y rediseñar campañas de marketing centradas en el compromiso ambiental.
     
     #### Este proyecto ayudará a Uber no solo a cumplir con sus objetivos de sostenibilidad, sino también a mejorar su imagen pública y garantizar su rentabilidad a largo plazo, consolidándose como un líder en innovación dentro del sector de Ride-Hailing.
@@ -208,7 +208,7 @@ def acercaDe_page():
     #### Matplotlib y Seaborn ofrecen una base sólida para la visualización de datos, mientras que herramientas como Streamlit permiten transformar estos gráficos en dashboards interactivos. Jupyter Notebook combina análisis y visualización en un solo entorno, facilitando la creación de informes comprensibles y detallados.
     
     ---
-    ## **Infraestructura y Seguridad**
+    # **Infraestructura y Seguridad**
     
     ### **Herramientas y Tecnologías:**
     
