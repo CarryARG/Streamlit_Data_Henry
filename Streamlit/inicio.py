@@ -36,7 +36,7 @@ canva_b64 = get_image_b64('./Streamlit/images/canva.png')
 # Function to set the logo and reduce space between navbar and logo
 def inicio_page():
     # Set the background with 80% opacity
-    set_background('./Streamlit/images/wallpaper_uber.png', alpha=0.8)
+    set_background('./Streamlit/images/wallpaper_uber.png')
 
     # Get the logo image in base64
     logo_b64 = get_image_b64('./Streamlit/images/uber_logo1.png')
