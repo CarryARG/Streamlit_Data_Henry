@@ -46,6 +46,9 @@ def modelos_page():
         <style>
         .stButton>button {
             background-color: #333333;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
             color: white;
             border: none;
             padding: 10px 24px;
