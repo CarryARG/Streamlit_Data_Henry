@@ -11,30 +11,24 @@ def get_image_b64(image_path):
         st.error(f"Image not found at {image_path}")
         return None
 
-# Function to set the background of the page with a slight transparency
-# Function to set the background of the page with a slight transparency and scrolling
-def set_background(png_file, alpha=0.8):
+# Función para establecer el fondo de la página con la imagen y permitir el scroll
+def set_background(png_file):
     encoded_image = get_image_b64(png_file)
     if encoded_image:
         st.markdown(
             f"""
             <style>
-            body {{  /* Target the body element for scrolling */
+            body {{
                 background-image: url("data:image/png;base64,{encoded_image}");
                 background-size: cover;
                 background-repeat: no-repeat;
-                background-attachment: scroll;  /* Enable scrolling */
-                background-position: center;
-                background-color: rgba(0,0,0,{alpha});
-                overflow: auto;  /* Allow content to overflow and scroll */
-            }}
-            .stApp {{  /* Adjust padding for content within the app */
-                padding: 2rem;  /* Add some space around the content */
+                background-attachment: fixed;  background-position: center;
             }}
             </style>
             """,
-            unsafe_allow_html=True,
+            unsafe_allow_html=True
         )
+
 
 # Get the Canva image in base64
 canva_b64 = get_image_b64('./Streamlit/images/canva.png')
