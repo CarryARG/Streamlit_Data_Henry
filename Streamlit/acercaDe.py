@@ -363,14 +363,14 @@ def acercaDe_page():
     for idx, persona in enumerate(personas):
         with columns[idx]:
             # Nombre y profesión centrados
-            st.markdown(f'<h2 style="text-align: center; margin-bottom: 10px;">{persona["nombre"]}</h2>', unsafe_allow_html=True)
-            st.markdown(f'<h4 style="text-align: center; color: gray;">{persona["profesion"]}</h4>', unsafe_allow_html=True)
+            st.markdown(f'<h2 style="text-align: center; margin-bottom: 20px;">{persona["nombre"]}</h2>', unsafe_allow_html=True)  # Aumentar el margen
+            st.markdown(f'<h4 style="text-align: center; color: gray; margin-bottom: 20px;">{persona["profesion"]}</h4>', unsafe_allow_html=True)  # Aumentar el margen
             
             # Imagen del equipo
             persona_image = get_image_b64(persona["imagen_link"])
             if persona_image:
-                st.markdown(f'<div style="display: flex; justify-content: center;"><img src="data:image/png;base64,{persona_image}" style="border-radius: 50%;" width="150"/></div>', unsafe_allow_html=True)
-    
+                st.markdown(f'<div style="display: flex; justify-content: center; margin-bottom: 20px;"><img src="data:image/png;base64,{persona_image}" style="border-radius: 50%;" width="150"/></div>', unsafe_allow_html=True)  # Añadir margen abajo
+            
             # Logos de redes sociales
             linkedin_logo = get_image_b64("./Streamlit/images/LI-In-Bug.png")
             github_logo = get_image_b64("./Streamlit/images/github-mark-white.png")
