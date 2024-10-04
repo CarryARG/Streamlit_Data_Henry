@@ -31,6 +31,9 @@ def set_background(png_file, alpha=0.8):
             unsafe_allow_html=True,
         )
 
+# Get the Canva image in base64
+canva_b64 = get_image_b64('./Streamlit/images/canva.jpeg')
+
 # Function to set the logo and reduce space between navbar and logo
 def inicio_page():
     # Set the background with 80% opacity
@@ -49,7 +52,7 @@ def inicio_page():
                     <div class="col">
                         <img src="data:image/png;base64,{logo_b64}" alt="Uber Logo" style="width: 180px; margin-top: 1rem; border-radius: 50%;">  
                         <p>&nbsp;</p>
-                        <h1 class="mt-1" style="font-family: 'Uber Move Text', sans-serif; color: #ffffff; text-shadow: 6px 6px 9.5px #000000; font-size: 4.2rem; font-weight: bold;">Data Product by Arcope</h1>
+                        <h1 class="mt-1" style="color: #ffffff; text-shadow: 6px 6px 9.5px #000000; font-size: 4.2rem; font-weight: bold;">Data Product by Arcope</h1>
                     </div>
                 </div>
             </div>
@@ -58,3 +61,29 @@ def inicio_page():
         )
     else:
         st.error("Logo image not found!")
+
+    # Check if Canva image is loaded correctly
+    if canva_b64:
+        # Display Canva image with link and hover effect
+        st.markdown(
+            f"""
+            <div class="container-fluid d-flex justify-content-center align-items-center" style="height: 30vh;">
+                <div class="row text-center">
+                    <div class="col">
+                        <a href="https://www.canva.com/design/DAGSRLCbQ_4/ElfqkaX_JbZqlid7SVm3pw/edit?utm_content=DAGSRLCbQ_4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">
+                            <img src="data:image/jpeg;base64,{canva_b64}" alt="Canva" class="hover-image" style="width: 280px; margin-top: 2rem; transition: transform 0.3s;">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <style>
+            .hover-image:hover {{
+                transform: scale(1.05);  /* Slight zoom on hover */
+                transition: transform 0.3s ease-in-out;
+            }}
+            </style>
+            """,
+            unsafe_allow_html=True,
+        )
+    else:
+        st.error("Canva image not found!")
