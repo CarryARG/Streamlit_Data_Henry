@@ -146,7 +146,7 @@ st.markdown(f"""
         <a href="?page=analisis" class="nav-item" style="color: #000000; font-size: 18px;">Analisis Preliminar</a>
         <a href="?page=dashboard" class="nav-item" style="color: #000000; font-size: 18px;">Dashboard</a>
         <a href="?page=modelos" class="nav-item" style="color: #000000; font-size: 18px;">Modelos</a>
-        <a href="https://chatbot-byarcope.streamlit.app/" class="nav-item" style="color: #000000; font-size: 18px;">Chat Bot</a>
+        <a href="https://chatbot-byarcope.streamlit.app/" class="nav-item" style="color: #000000; font-size: 18px;">ChatBot</a>
         <a href="?page=acercaDe" class="nav-item" style="color: #000000; font-size: 18px;">Acerca De</a>
     </nav>
 """, unsafe_allow_html=True)
@@ -161,20 +161,20 @@ st.markdown("""
 if page == "inicio":
     st.experimental_set_query_params(page="inicio")
     inicio.inicio_page()
+elif page == "analisis":
+    st.experimental_set_query_params(page="analisis")
+    analisis.analisis_page()
 elif page == "dashboard":
     st.experimental_set_query_params(page="dashboard")
     dashboard.dashboard_page()
 elif page == "modelos":
     st.experimental_set_query_params(page="modelos")
     modelos.modelos_page()
+elif page == "chatbot":
+    st.experimental_set_query_params(page="chatbot")
+    chatbot.chatbot_page()
 elif page == "acercaDe":
     st.experimental_set_query_params(page="acercaDe")
     acercaDe.acercaDe_page()
-elif page == "analisis":
-    st.experimental_set_query_params(page="analisis")
-    acercaDe.analisis_page()
-elif page == "chatbot":
-    st.experimental_set_query_params(page="chatbot")
-    acercaDe.chatbot_page()
 else:
     st.error("Página no encontrada")
