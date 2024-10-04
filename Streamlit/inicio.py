@@ -31,7 +31,7 @@ def set_background(png_file, alpha=0.8):
         )
 
 # Get the Canva image in base64
-canva_b64 = get_image_b64('./Streamlit/images/canva.jpeg')
+canva_b64 = get_image_b64('./Streamlit/images/canva.png')
 
 # Function to set the logo and reduce space between navbar and logo
 def inicio_page():
