@@ -72,7 +72,7 @@ def modelos_page():
         .stColumn {
             display: flex:
             margin: 0 auto;
-            height: 50%;
+            width: 50%;
             justify-content: center;
             align-content: center;
             align-items: center;
