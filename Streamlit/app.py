@@ -94,7 +94,7 @@ st.markdown("""
 
             background-color: #000000; /* Casi negro para el navbar */
 
-            padding: 15px;
+            padding: 10px;
 
             display: flex;
 
