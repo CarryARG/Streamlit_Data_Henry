@@ -6,6 +6,8 @@ import inicio # Importar la página 'inicio.py'
 import base64
 from PIL import Image
 import pandas as pd
+import plotly.express as px
+
 
 def modelos_page():
 
