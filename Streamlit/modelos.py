@@ -32,10 +32,6 @@ def modelos_page():
     def mostrar_Modelo_1():
         st.session_state.page = 'Eficiencia_E'
 
-    # Función para mostrar la página del ML2
-    def mostrar_Modelo_2():
-        st.session_state.page = 'Costo_O'
-
     # Crear botones para cambiar de página
     col1, col2, col3 = st.columns([1, 1, 1])
     with col1:
@@ -45,10 +41,6 @@ def modelos_page():
     with col2:
         if st.button('Eficiencia_E'):
             mostrar_Modelo_1()
-
-    with col3:
-        if st.button('Costo_O'):
-            mostrar_Modelo_2()
     # CSS para estilizar los botones
     st.markdown("""
         <style>
@@ -63,7 +55,9 @@ def modelos_page():
             cursor: pointer;
             transition-duration: 0.4s;
             border-radius: 12px;
+            justify-content: around;
         }
+        
         .stButton>button:hover {
             background-color: white;
             color: black;
