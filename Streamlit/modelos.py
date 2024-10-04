@@ -55,7 +55,8 @@ def modelos_page():
             cursor: pointer;
             transition-duration: 0.4s;
             border-radius: 12px;
-            justify-content: around;
+            display: inline-block;
+            width: 100%;
         }
         
         .stButton>button:hover {
