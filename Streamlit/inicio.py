@@ -36,11 +36,13 @@ def inicio_page():
             )
     # Get the Canva image in base64
     canva_b64 = get_image_b64('./Streamlit/images/canva.png')
-    # Call the set_background function
-    set_background('./Streamlit/images/wallpaper_uber.png')
+    
 
     # Get the logo image in base64
     logo_b64 = get_image_b64('./Streamlit/images/uber_logo1.png')
+
+    # Call the set_background function
+    set_background('./Streamlit/images/wallpaper_uber.png')
 
     # Check if logo is loaded correctly
     if logo_b64:
