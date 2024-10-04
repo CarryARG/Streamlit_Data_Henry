@@ -65,9 +65,9 @@ st.markdown("""
 
         .nav-item {
 
-            background-color: #1fbad6; /* Azul claro */
+            background-color: #FFFFFF; /* Azul claro */
 
-            color: #c0c0c8; /* Gris claro */
+            color: #000000; /* Gris claro */
 
             padding: 10px 20px;
 
@@ -81,7 +81,7 @@ st.markdown("""
 
         .nav-item:hover {
 
-            background-color: #222233; /* Azul oscuro al hacer hover */
+            background-color: #d0d0d0; /* Azul oscuro al hacer hover */
             box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
             text-decoration: none; /* Eliminar subrayado */
             transform: scale(1.2); /* Aumentar el tamaño al pasar el mouse */
@@ -92,7 +92,7 @@ st.markdown("""
 
         .navbar-custom {
 
-            background-color: #09091a; /* Casi negro para el navbar */
+            background-color: #000000; /* Casi negro para el navbar */
 
             padding: 20px;
 
