@@ -10,14 +10,16 @@ import plotly.express as px
 from sklearn.preprocessing import StandardScaler
 import joblib
 
+# Configurar la página principal
+st.set_page_config(
+    page_title="Sistema de Vehículos Eficientes",
+    page_icon="🚗",
+    layout="centered",
+)
+
 def modelos_page():
     
-    # Configurar la página principal
-    st.set_page_config(
-        page_title="Sistema de Vehículos Eficientes",
-        page_icon="🚗",
-        layout="centered",
-    )
+    
     # Inicializar el estado de la sesión
     if 'page' not in st.session_state:
         st.session_state.page = 'Portada'
