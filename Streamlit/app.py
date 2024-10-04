@@ -3,6 +3,8 @@ import acercaDe  # Importar la página 'acercaDe.py'
 import dashboard  # Importar la página 'dashboard.py'
 import modelos  # Importar la página 'modelos_ml.py'
 import inicio # Importar la página 'inicio.py'
+import analisis
+import chatbot
 import base64
 
 
@@ -141,8 +143,10 @@ st.markdown("""
 st.markdown(f"""
     <nav class="navbar-custom">
         <a href="?page=inicio" class="nav-item" style="color: #000000; font-size: 18px;">Inicio</a>
+        <a href="?page=analisis" class="nav-item" style="color: #000000; font-size: 18px;">Analisis Preliminar</a>
         <a href="?page=dashboard" class="nav-item" style="color: #000000; font-size: 18px;">Dashboard</a>
         <a href="?page=modelos" class="nav-item" style="color: #000000; font-size: 18px;">Modelos</a>
+        <a href="https://chatbot-byarcope.streamlit.app/" class="nav-item" style="color: #000000; font-size: 18px;">Chat Bot</a>
         <a href="?page=acercaDe" class="nav-item" style="color: #000000; font-size: 18px;">Acerca De</a>
     </nav>
 """, unsafe_allow_html=True)
@@ -166,5 +170,11 @@ elif page == "modelos":
 elif page == "acercaDe":
     st.experimental_set_query_params(page="acercaDe")
     acercaDe.acercaDe_page()
+elif page == "analisis":
+    st.experimental_set_query_params(page="analisis")
+    acercaDe.analisis_page()
+elif page == "chatbot":
+    st.experimental_set_query_params(page="chatbot")
+    acercaDe.chatbot_page()
 else:
     st.error("Página no encontrada")
