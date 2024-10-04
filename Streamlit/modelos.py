@@ -33,8 +33,8 @@ def modelos_page():
         st.session_state.page = 'Eficiencia_E'
 
     # Crear botones para cambiar de página
-    col1, col2 = st.columns([1, 1])
-    with col1:
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col2:
         if st.button('Portada'):
             mostrar_Modelos()
 
