@@ -81,7 +81,7 @@ def inicio_page():
                 <div class="row text-center">
                     <div class="col">
                         <a href="https://www.canva.com/design/DAGSRLCbQ_4/ElfqkaX_JbZqlid7SVm3pw/edit?utm_content=DAGSRLCbQ_4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">
-                            <img src="data:image/jpeg;base64,{canva_b64}" alt="Canva" class="hover-image" style="width: 280px; margin-top: 2rem; transition: transform 0.3s;">
+                            <img src="data:image/jpeg;base64,{canva_b64}" alt="Canva" class="hover-image" style="width: 560px; margin-top: 2rem; transition: transform 0.8s;">
                         </a>
                     </div>
                 </div>
