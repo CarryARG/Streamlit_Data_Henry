@@ -68,7 +68,7 @@ def modelos_page():
         }
 
          /* Estilo para centrar las columnas en la parte superior */
-        .stColumn {
+        .stColumns {
             justify-content: center;
             align-content: center;
             align-items: center;
