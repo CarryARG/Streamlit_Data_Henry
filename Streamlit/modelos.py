@@ -66,13 +66,6 @@ def modelos_page():
             color: black;
             border: 2px solid #333333;
         }
-
-         /* Estilo para centrar las columnas en la parte superior */
-        .stColumns {
-            justify-content: center;
-            align-content: center;
-            align-items: center;
-        }
        
         </style>
     """, unsafe_allow_html=True)
