@@ -2,47 +2,46 @@ import streamlit as st
 import base64
 from PIL import Image
 
+# Function to convert an image to base64
+def get_image_b64(image_path):
+    try:
+        with open(image_path, "rb") as image_file:
+            return base64.b64encode(image_file.read()).decode()
+    except FileNotFoundError:
+        st.error(f"Image not found at {image_path}")
+        return None
 
+# Function to set the background of the entire page using the <body> tag
+def set_background(png_file):
+    encoded_image = get_image_b64(png_file)
+    if encoded_image:
+        st.markdown(
+            f"""
+            <style>
+            body {{
+                background-image: url("data:image/png;base64,{encoded_image}");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: scroll;  /* Allow the background to move with the content */
+                background-position: center;
+                background-color: rgba(0, 0, 0, 0.8);  /* Optional transparency overlay */
+                overflow: auto;  /* Ensure scroll functionality */
+            }}
+            </style>
+            """,
+            unsafe_allow_html=True,
+        )
 
-
-
+# Get the Canva image in base64
+canva_b64 = get_image_b64('./Streamlit/images/canva.png')
 
 # Function to set the logo and reduce space between navbar and logo
 def inicio_page():
-    
-# Function to convert an image to base64
-    def get_image_b64(image_path):
-        try:
-            with open(image_path, "rb") as image_file:
-                return base64.b64encode(image_file.read()).decode()
-        except FileNotFoundError:
-            st.error(f"Image not found at {image_path}")
-            return None
-        
-    # Function to set the background of the page with a slight transparency
-    def set_background(png_file):
-        encoded_image = get_image_b64(png_file)
-        if encoded_image:
-            st.markdown(
-                f"""
-                <div class="container-fluid d-flex justify-content-center align-items-center" style="background-size: cover; height: 80vh; background-image: url('data:image/png;base64,{encoded_image}'); background-repeat: no-repeat; background-attachment: scroll; background-position: center; background-color: rgba(0,0,0,0.8); overflow: auto;">
-                    <div class="col">  <img src="data:image/png;base64,{logo_b64}" alt="Uber Logo" style="width: 180px; margin-top: 1rem; border-radius: 50%;">  
-                            <p>&nbsp;</p>
-                            <h1 class="mt-1" style="color: #ffffff; text-shadow: 6px 6px 9.5px #000000; font-size: 4.2rem; font-weight: bold;">Data Product by Arcope</h1>
-                    </div>
-                </div>
-                """,
-                unsafe_allow_html=True
-            )
-    # Get the Canva image in base64
-    canva_b64 = get_image_b64('./Streamlit/images/canva.png')
-    
+    # Set the background with 80% opacity
+    set_background('./Streamlit/images/wallpaper_uber.png')
 
     # Get the logo image in base64
     logo_b64 = get_image_b64('./Streamlit/images/uber_logo1.png')
-
-    # Call the set_background function
-    set_background('./Streamlit/images/wallpaper_uber.png')
 
     # Check if logo is loaded correctly
     if logo_b64:
