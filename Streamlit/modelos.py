@@ -99,6 +99,15 @@ def modelos_page():
         st.write("""
         Para el modelo de eficiencia energética se optiene como resultado 5 vehículos altamente eficientes en conceptos como es el gasto de combustible, costo de combustible y produccción de CO2, de esta manera se va a tomar la mejor decición a la hora de agregar un nuevo vehículo a la flota que priorice bajos costos en combustible y ademas sea amigable con el medio ambiente
         """)
+
+        # Centrar imagen
+        st.markdown("""
+        <div style="text-align: center;">
+            <img src="https://fullandfast.com/blog/wp-content/uploads/2020/03/uber-vehiculo-electrico.jpg" alt="Amigables con el planeta" width="300"/>
+            <p>Amigables con el planeta</p>
+        </div>
+        """, unsafe_allow_html=True)
+        
         st.image('https://fullandfast.com/blog/wp-content/uploads/2020/03/uber-vehiculo-electrico.jpg', caption="Amigables con el planeta", width=300)
         st.markdown("""
         <h2 style='text-align: center;'>Modelo de maximización operativa y preventa de vehículo</h2>
