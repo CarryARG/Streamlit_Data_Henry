@@ -33,7 +33,7 @@ def modelos_page():
         st.session_state.page = 'Eficiencia_E'
 
     # Crear botones para cambiar de página
-    col1, col2 = st.columns([1, 1])
+    col1, col2 = st.columns(2)
     with col1:
         if st.button('Portada'):
             mostrar_Modelos()
@@ -61,14 +61,21 @@ def modelos_page():
             display: inline-block;
             width: 50%;
         }
-        
+
         .stButton>button:hover {
             background-color: white;
             color: black;
             border: 2px solid #333333;
         }
+        
+        /* Estilo para centrar las columnas en la parte superior */
+        .stColumn {
+            display: flex;
+            justify-content: center;
+        }
         </style>
-        """, unsafe_allow_html=True)
+    """, unsafe_allow_html=True)
+
     # Mostrar la página correspondiente
     #Pagina inicial
     if st.session_state.page == 'Portada':
