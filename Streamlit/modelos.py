@@ -54,7 +54,6 @@ def modelos_page():
             padding: 10px 24px;
             text-align: center;
             font-size: 22px;
-            margin: 4px 2px;
             cursor: pointer;
             transition-duration: 0.4s;
             border-radius: 12px;
@@ -68,15 +67,7 @@ def modelos_page():
             border: 2px solid #333333;
         }
         
-        /* Estilo para centrar las columnas en la parte superior */
-        .stColumn {
-            display: flex:
-            margin: 0 auto;
-            width: 50%;
-            justify-content: center;
-            align-content: center;
-            align-items: center;
-        }
+       
         </style>
     """, unsafe_allow_html=True)
 
