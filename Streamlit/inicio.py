@@ -44,10 +44,10 @@ def inicio_page():
         # Reduce vertical spacing with 'mt-1' class and set smaller logo size
         st.markdown(
             f"""
-            <div class="container-fluid d-flex justify-content-center align-items-center" style="height: 18vh;">
+            <div class="container-fluid d-flex justify-content-center align-items-center" style="height: 15vh;">
                 <div class="row text-center">
                     <div class="col">
-                        <img src="data:image/png;base64,{logo_b64}" alt="Uber Logo" style="width: 100px; margin-top: 1rem;">  
+                        <img src="data:image/png;base64,{logo_b64}" alt="Uber Logo" style="width: 120px; margin-top: 1rem;">  
                         <h1 class="mt-1" style="color: #ffffff; text-shadow: 1px 1px 2px #000000;">Data Product by Arcope</h1>
                     </div>
                 </div>
