@@ -22,7 +22,6 @@ def set_background(png_file, alpha=0.8):
                 background-image: url("data:image/png;base64,{encoded_image}");
                 background-size: cover;
                 background-repeat: no-repeat;
-                background-attachment: scroll;
                 background-position: center;
                 background-color: rgba(0,0,0,{alpha});
             }}
