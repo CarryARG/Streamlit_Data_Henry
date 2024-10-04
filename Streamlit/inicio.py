@@ -25,6 +25,7 @@ def set_background(png_file, alpha=0.8):
                 background-attachment: scroll;
                 background-position: center;
                 background-color: rgba(0,0,0,{alpha});
+                overflow: auto;
             }}
             </style>
             """,
