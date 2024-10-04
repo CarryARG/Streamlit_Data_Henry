@@ -12,7 +12,7 @@ def get_image_b64(image_path):
         return None
 
 # Function to set the background of the page with a slight transparency
-def set_background(png_file, alpha=0.8):
+def set_background(png_file):
     encoded_image = get_image_b64(png_file)
     if encoded_image:
         st.markdown(
@@ -24,7 +24,7 @@ def set_background(png_file, alpha=0.8):
                 background-repeat: no-repeat;
                 background-attachment: scroll;
                 background-position: center;
-                background-color: rgba(0,0,0,{alpha});
+                background-color: rgba(0,0,0,0.8);
                 overflow: auto;
             }}
             </style>
@@ -38,7 +38,7 @@ canva_b64 = get_image_b64('./Streamlit/images/canva.png')
 # Function to set the logo and reduce space between navbar and logo
 def inicio_page():
     # Set the background with 80% opacity
-    set_background('./Streamlit/images/wallpaper_uber.png', alpha=0.8)
+    set_background('./Streamlit/images/wallpaper_uber.png')
 
     # Get the logo image in base64
     logo_b64 = get_image_b64('./Streamlit/images/uber_logo1.png')
