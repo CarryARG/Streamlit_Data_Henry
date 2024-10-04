@@ -48,7 +48,7 @@ def inicio_page():
                 <div class="row text-center">
                     <div class="col">
                         <img src="data:image/png;base64,{logo_b64}" alt="Uber Logo" style="width: 120px; margin-top: 1rem;">  
-                        <h1 class="mt-1" style="top: 20px; color: #ffffff; text-shadow: 1px 1px 2px #000000; font-size: 4.2rem; font-weight: bold;">Data Product by Arcope</h1>
+                        <h1 class="mt-1" style="top: 5rem; color: #ffffff; text-shadow: 1px 1px 2px #000000; font-size: 4.2rem; font-weight: bold;">Data Product by Arcope</h1>
                     </div>
                 </div>
             </div>
