@@ -144,7 +144,7 @@ st.markdown(f"""
     <nav class="navbar-custom">
         <a href="?page=inicio" class="nav-item" style="color: #000000; font-size: 18px;">Inicio</a>
         <a href="?page=analisis" class="nav-item" style="color: #000000; font-size: 18px;">Analisis Preliminar</a>
-        <a href="?page=dashboard" class="nav-item" style="color: #000000; font-size: 18px;">Dashboard</a>
+        <a href="https://dashboard-arcope.streamlit.app/" class="nav-item" style="color: #000000; font-size: 18px;">Dashboard</a>
         <a href="?page=modelos" class="nav-item" style="color: #000000; font-size: 18px;">Modelos</a>
         <a href="https://chatbot-byarcope.streamlit.app/" class="nav-item" style="color: #000000; font-size: 18px;">ChatBot</a>
         <a href="?page=acercaDe" class="nav-item" style="color: #000000; font-size: 18px;">Acerca De</a>
